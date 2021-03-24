@@ -5,7 +5,7 @@ import { encryption, deepClone } from '@/util/util'
 import webiste from '@/config/website'
 import { loginByUsername, getUserInfo, getMenu, getTopMenu, logout, refeshToken } from '@/api/user'
 
-function addPath (ele, first) {
+function addPath( ele, first ){
   const menu = webiste.menu;
   const propsConfig = menu.props;
   const propsDefault = {
@@ -14,24 +14,25 @@ function addPath (ele, first) {
     icon: propsConfig.icon || 'icon',
     children: propsConfig.children || 'children'
   }
-  const icon = ele[propsDefault.icon];
-  ele[propsDefault.icon] = validatenull(icon) ? menu.iconDefault : icon;
-  const isChild = ele[propsDefault.children] && ele[propsDefault.children].length !== 0;
-  if (isURL(ele[propsDefault.path])) {
-    ele[propsDefault.path] = ele[propsDefault.path].replace(/&/g, "$")
+  const icon = ele[ propsDefault.icon ];
+  ele[ propsDefault.icon ] = validatenull(icon)? menu.iconDefault: icon;
+  const isChild = ele[ propsDefault.children ] && ele[ propsDefault.children ].length !== 0;
+  if (isURL(ele[ propsDefault.path ])) {
+    ele[ propsDefault.path ] = ele[ propsDefault.path ].replace(/&/g, "$")
   }
-  if (!isChild && first && !isURL(ele[propsDefault.path])) {
-    ele[propsDefault.path] = ele[propsDefault.path] + '/index'
+  if (!isChild && first && !isURL(ele[ propsDefault.path ])) {
+    ele[ propsDefault.path ] = ele[ propsDefault.path ] + '/index'
   } else {
-    ele[propsDefault.children] && ele[propsDefault.children].forEach(child => {
-      if (!isURL(child[propsDefault.path])) {
-        child[propsDefault.path] = `${ele[propsDefault.path]}/${child[propsDefault.path] ? child[propsDefault.path] : 'index'}`
+    ele[ propsDefault.children ] && ele[ propsDefault.children ].forEach(child => {
+      if (!isURL(child[ propsDefault.path ])) {
+        child[ propsDefault.path ] = `${ ele[ propsDefault.path ] }/${ child[ propsDefault.path ]? child[ propsDefault.path ]: 'index' }`
       }
       addPath(child);
     })
   }
 
 }
+
 const user = {
   state: {
     userInfo: {},
@@ -44,14 +45,14 @@ const user = {
   },
   actions: {
     //根据用户名登录
-    LoginByUsername ({ commit }, userInfo) {
+    LoginByUsername( { commit }, userInfo ){
       const user = encryption({
         data: userInfo,
         type: 'Aes',
         key: 'avue',
         param: ['useranme', 'password']
       });
-      return new Promise((resolve) => {
+      return new Promise(( resolve ) => {
         loginByUsername(user.username, user.password, userInfo.code, userInfo.redomStr).then(res => {
           const data = res.data.data;
           commit('SET_TOKEN', data);
@@ -62,8 +63,8 @@ const user = {
       })
     },
     //根据手机号登录
-    LoginByPhone ({ commit }, userInfo) {
-      return new Promise((resolve) => {
+    LoginByPhone( { commit }, userInfo ){
+      return new Promise(( resolve ) => {
         loginByUsername(userInfo.phone, userInfo.code).then(res => {
           const data = res.data.data;
           commit('SET_TOKEN', data);
@@ -73,9 +74,9 @@ const user = {
         })
       })
     },
-    GetUserInfo ({ commit }) {
-      return new Promise((resolve, reject) => {
-        getUserInfo().then((res) => {
+    GetUserInfo( { commit } ){
+      return new Promise(( resolve, reject ) => {
+        getUserInfo().then(( res ) => {
           const data = res.data.data;
           commit('SET_USERIFNO', data.userInfo);
           commit('SET_ROLES', data.roles);
@@ -87,8 +88,8 @@ const user = {
       })
     },
     //刷新token
-    RefeshToken ({ state, commit }) {
-      return new Promise((resolve, reject) => {
+    RefeshToken( { state, commit } ){
+      return new Promise(( resolve, reject ) => {
         refeshToken(state.refeshToken).then(res => {
           const data = res.data.data;
           commit('SET_TOKEN', data);
@@ -99,8 +100,8 @@ const user = {
       })
     },
     // 登出
-    LogOut ({ commit }) {
-      return new Promise((resolve, reject) => {
+    LogOut( { commit } ){
+      return new Promise(( resolve, reject ) => {
         logout().then(() => {
           commit('SET_TOKEN', '')
           commit('SET_MENUALL_NULL', []);
@@ -117,7 +118,7 @@ const user = {
       })
     },
     //注销session
-    FedLogOut ({ commit }) {
+    FedLogOut( { commit } ){
       return new Promise(resolve => {
         commit('SET_TOKEN', '')
         commit('SET_MENUALL_NULL', []);
@@ -130,23 +131,33 @@ const user = {
         resolve()
       })
     },
-    GetTopMenu () {
+    GetTopMenu(){
       return new Promise(resolve => {
-        getTopMenu().then((res) => {
+        getTopMenu().then(( res ) => {
           const data = res.data.data || []
           resolve(data)
         })
       })
     },
     //获取系统菜单
-    GetMenu ({ commit }, parentId) {
+    GetMenu( { commit }, parentId ){
       return new Promise(resolve => {
-        getMenu(parentId).then((res) => {
-          const data = res.data.data
-          let menu = deepClone(data);
+        getMenu(parentId).then(( res ) => {
+          const data = res.data.data;
+          console.log(data);
+          // let menu = deepClone(data);
+          // 本地菜单格式
+          let menu = [{
+            children: [],
+            component: "views/util/table",
+            icon: "icon-caidan",
+            label: "表格",
+            meta: { i18n: "table" },
+            path: "/table",
+          }];
           menu.forEach(ele => {
             addPath(ele, true);
-          })
+          });
           commit('SET_MENUALL', menu)
           commit('SET_MENU', menu)
           resolve(menu)
@@ -155,18 +166,18 @@ const user = {
     },
   },
   mutations: {
-    SET_TOKEN: (state, token) => {
+    SET_TOKEN: ( state, token ) => {
       setToken(token)
       state.token = token;
       setStore({ name: 'token', content: state.token })
     },
-    SET_MENUID (state, menuId) {
+    SET_MENUID( state, menuId ){
       state.menuId = menuId;
     },
-    SET_USERIFNO: (state, userInfo) => {
+    SET_USERIFNO: ( state, userInfo ) => {
       state.userInfo = userInfo;
     },
-    SET_MENUALL: (state, menuAll) => {
+    SET_MENUALL: ( state, menuAll ) => {
       let menu = state.menuAll;
       menuAll.forEach(ele => {
         if (!menu.find(item => item.label == ele.label && item.path == ele.path)) {
@@ -176,24 +187,24 @@ const user = {
       state.menuAll = menu
       setStore({ name: 'menuAll', content: state.menuAll })
     },
-    SET_MENUALL_NULL: (state) => {
+    SET_MENUALL_NULL: ( state ) => {
       state.menuAll = []
       setStore({ name: 'menuAll', content: state.menuAll })
     },
-    SET_MENU: (state, menu) => {
+    SET_MENU: ( state, menu ) => {
       state.menu = menu
       setStore({ name: 'menu', content: state.menu })
     },
-    SET_ROLES: (state, roles) => {
+    SET_ROLES: ( state, roles ) => {
       state.roles = roles;
     },
-    SET_PERMISSION: (state, permission) => {
+    SET_PERMISSION: ( state, permission ) => {
       state.permission = {};
       permission.forEach(ele => {
-        state.permission[ele] = true;
+        state.permission[ ele ] = true;
       });
     }
   }
 
-}
+};
 export default user

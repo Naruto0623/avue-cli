@@ -1,5 +1,5 @@
 export default {
-  title: 'Avue is a framework',
+  title: '天津市检察院',
   tip: 'tip',
   logoutTip: 'Exit the system, do you want to continue?',
   submitText: 'submit',

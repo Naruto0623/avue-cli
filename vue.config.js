@@ -1,18 +1,21 @@
 // 基础路径 注意发布之前要先修改这里
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 module.exports = {
-  lintOnSave: true,
+  lintOnSave: false,
   productionSourceMap: false,
-  // configureWebpack: config => {
-  //     if (process.env.NODE_ENV === 'production') {
-  //         return {
-  //             plugins: [
-  //                 new BundleAnalyzerPlugin()
-  //             ]
-  //         }
-  //     }
-  // },
-  chainWebpack: (config) => {
+  configureWebpack: config => {
+    // if (process.env.NODE_ENV === 'production') {
+    //   return {
+    //     plugins: [
+    //       new BundleAnalyzerPlugin()
+    //     ]
+    //   }
+    // }
+    return {
+
+    }
+  },
+  chainWebpack: ( config ) => {
     //忽略的打包文件
     config.externals({
       'vue': 'Vue',
@@ -35,4 +38,4 @@ module.exports = {
   css: {
     extract: { ignoreOrder: true }
   }
-}
+};

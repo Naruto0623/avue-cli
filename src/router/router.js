@@ -13,13 +13,15 @@ import ViewsRouter from './views/'
 import AvueRouter from './avue-router';
 import i18n from '@/lang' // Internationalization
 import Store from '../store/';
-Vue.use(VueRouter)
+
+console.log(ViewsRouter);
+Vue.use(VueRouter);
 //创建路由
 export const createRouter = () => new VueRouter({
-  mode: 'history',
+  mode: 'hash',
   routes: [...PageRouter, ...ViewsRouter]
-})
-const Router = createRouter()
+});
+const Router = createRouter();
 AvueRouter.install(Vue, {
   router: Router,
   store: Store,
@@ -28,9 +30,10 @@ AvueRouter.install(Vue, {
 });
 Router.$avueRouter.formatRoutes(Store.state.user.menuAll, true);
 Router.addRoutes([...PageRouter, ...ViewsRouter]);
-export function resetRouter () {
-  const newRouter = createRouter()
-  Router.matcher = newRouter.matcher // reset router
+
+export function resetRouter(){
+  const newRouter = createRouter();
+  Router.matcher = newRouter.matcher; // reset router
   AvueRouter.install(Vue, {
     router: Router,
     store: Store,
@@ -38,4 +41,5 @@ export function resetRouter () {
     keepAlive: false,
   });
 }
+
 export default Router

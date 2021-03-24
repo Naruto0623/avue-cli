@@ -1,18 +1,18 @@
 /**
  * 全站权限配置
- * 
  */
-import router from './router/router'
-import store from './store'
+import router from './router'
+import store from '../store'
 import { validatenull } from '@/util/validate'
 import { getToken } from '@/util/auth'
 import NProgress from 'nprogress' // progress bar
 import 'nprogress/nprogress.css' // progress bar style
+
 NProgress.configure({ showSpinner: false });
 const lockPage = store.getters.website.lockPage; //锁屏页
-router.beforeEach((to, from, next) => {
+router.beforeEach(( to, from, next ) => {
   const meta = to.meta || {};
-  const isMenu = meta.menu === undefined ? to.query.menu : meta.menu;
+  const isMenu = meta.menu === undefined? to.query.menu: meta.menu;
   store.commit('SET_IS_MENU', isMenu === undefined);
   if (getToken()) {
     if (store.getters.isLock && to.path != lockPage) { //如果系统激活锁屏，全部跳转到锁屏页
@@ -65,13 +65,13 @@ router.beforeEach((to, from, next) => {
       next('/login')
     }
   }
-})
+});
 
 router.afterEach(() => {
   NProgress.done();
   let title = store.getters.tag.label;
   let i18n = store.getters.tag.meta.i18n;
-  title = router.$avueRouter.generateTitle(title, i18n)
+  title = router.$avueRouter.generateTitle(title, i18n);
   //根据当前的标签也获取label的值动态设置浏览器标题
   router.$avueRouter.setTitle(title);
 });
