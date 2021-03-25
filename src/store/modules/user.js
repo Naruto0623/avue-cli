@@ -147,14 +147,24 @@ const user = {
           console.log(data);
           // let menu = deepClone(data);
           // 本地菜单格式
-          let menu = [{
-            children: [],
-            component: "views/util/table",
-            icon: "icon-caidan",
-            label: "表格",
-            meta: { i18n: "table" },
-            path: "/table",
-          }];
+          let menu = [
+            // {
+            //   children: [],
+            //   component: "views/util/table",
+            //   icon: "icon-caidan",
+            //   label: "表格",
+            //   meta: { i18n: "table" },
+            //   path: "/table",
+            // },
+            {
+              children: [],
+              component: "views/pages/smartCatalog/smartCatalog.vue",
+              icon: "icon-caidan",
+              label: "智能编目",
+              // meta: { i18n: "table" },
+              path: "/smartCatalog",
+            }
+          ];
           menu.forEach(ele => {
             addPath(ele, true);
           });

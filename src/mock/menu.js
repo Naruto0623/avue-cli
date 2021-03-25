@@ -121,11 +121,22 @@ const first = [
   {
     label: "表格",
     path: '/table',
-    component: 'views/util/table',
+    component: "views/pages/smartCatalog/smartCatalog.vue",
+
     icon: 'icon-caidan',
     meta: {
       i18n: 'table',
     },
+    children: []
+  },
+  {
+    label: "智能编目",
+    path: '/smartCatalog',
+    component: "views/pages/smartCatalog/smartCatalog.vue",
+    icon: 'icon-caidan',
+    // meta: {
+    //   i18n: 'table',
+    // },
     children: []
   },
   {

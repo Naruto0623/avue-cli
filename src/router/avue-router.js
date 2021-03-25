@@ -92,6 +92,7 @@ RouterPlugin.install = function (vue, option = {}) {
       if (aMenu.length === 0) return;
       for (let i = 0; i < aMenu.length; i++) {
         const oMenu = aMenu[i];
+        console.log(oMenu);
         let path = (() => {
           if (first) {
             return oMenu[propsDefault.path].replace('/index', '')
@@ -153,6 +154,7 @@ RouterPlugin.install = function (vue, option = {}) {
             return this.formatRoutes(children, false)
           })()
         }
+        console.log(oRouter.name,oRouter.component);
         aRouter.push(oRouter)
       }
       if (first) {
