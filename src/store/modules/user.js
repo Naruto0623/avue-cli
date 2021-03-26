@@ -157,11 +157,19 @@ const user = {
             // },
             {
               children: [],
-              component: "views/pages/smartCatalog/smartCatalog.vue",
-              icon: "icon-caidan",
+              component: "views/pages/smartCatalog/smartCatalog",
+              icon: "el-icon-tickets",
               label: "智能编目",
-              // meta: { i18n: "table" },
+              meta: { i18n: "smartCatalog" },
               path: "/smartCatalog",
+            },
+            {
+              children: [],
+              component: "views/pages/smartCatalog/smartCatalog",
+              icon: "el-icon-news",
+              label: "案卡回填",
+              meta: { i18n: "casesCard" },
+              path: "/casesCard",
             }
           ];
           menu.forEach(ele => {

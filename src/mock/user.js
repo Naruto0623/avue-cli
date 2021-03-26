@@ -19,7 +19,7 @@ export default ({ mock }) => {
             userInfo: {
                 username: 'admin',
                 name: 'avue',
-                avatar: 'https://gitee.com/uploads/61/632261_smallweigit.jpg',
+                avatar: '/img/logo.png',
             },
             roles: 'admin',
             permission: [

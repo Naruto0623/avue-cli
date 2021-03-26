@@ -71,7 +71,9 @@ export default {
     crudForm: '表格表单',
     cache: '页面缓冲',
     error: '异常页面',
-    test: '测试页面'
+    test: '测试页面',
+    smartCatalog: '智能编目',
+    casesCard: '案卡回填',
   },
   login: {
     title: '登录 ',

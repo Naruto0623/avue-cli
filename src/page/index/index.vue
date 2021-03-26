@@ -2,7 +2,7 @@
   <div class="avue-contail"
        :class="{'avue--collapse':isCollapse,}">
     <screenshot v-if="setting.screenshot"></screenshot>
-    <setting></setting>
+    <!--<setting></setting>-->
     <div class="avue-layout"
          :class="{'avue-layout--horizontal':isHorizontal}">
       <div class="avue-sidebar">

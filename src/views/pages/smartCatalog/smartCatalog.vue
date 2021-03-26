@@ -1,95 +1,272 @@
 <template>
-  <div>
-    <el-container style="height: 500px; border: 1px solid #eee">
-      <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
-        <el-menu :default-openeds="['1', '3']">
-          <el-submenu index="1">
-            <template slot="title"><i class="el-icon-message"></i>导航一</template>
-            <el-menu-item-group>
-              <template slot="title">分组一</template>
-              <el-menu-item index="1-1">选项1</el-menu-item>
-              <el-menu-item index="1-2">选项2</el-menu-item>
-            </el-menu-item-group>
-            <el-menu-item-group title="分组2">
-              <el-menu-item index="1-3">选项3</el-menu-item>
-            </el-menu-item-group>
-            <el-submenu index="1-4">
-              <template slot="title">选项4</template>
-              <el-menu-item index="1-4-1">选项4-1</el-menu-item>
-            </el-submenu>
-          </el-submenu>
-          <el-submenu index="2">
-            <template slot="title"><i class="el-icon-menu"></i>导航二</template>
-            <el-menu-item-group>
-              <template slot="title">分组一</template>
-              <el-menu-item index="2-1">选项1</el-menu-item>
-              <el-menu-item index="2-2">选项2</el-menu-item>
-            </el-menu-item-group>
-            <el-menu-item-group title="分组2">
-              <el-menu-item index="2-3">选项3</el-menu-item>
-            </el-menu-item-group>
-            <el-submenu index="2-4">
-              <template slot="title">选项4</template>
-              <el-menu-item index="2-4-1">选项4-1</el-menu-item>
-            </el-submenu>
-          </el-submenu>
-          <el-submenu index="3">
-            <template slot="title"><i class="el-icon-setting"></i>导航三</template>
-            <el-menu-item-group>
-              <template slot="title">分组一</template>
-              <el-menu-item index="3-1">选项1</el-menu-item>
-              <el-menu-item index="3-2">选项2</el-menu-item>
-            </el-menu-item-group>
-            <el-menu-item-group title="分组2">
-              <el-menu-item index="3-3">选项3</el-menu-item>
-            </el-menu-item-group>
-            <el-submenu index="3-4">
-              <template slot="title">选项4</template>
-              <el-menu-item index="3-4-1">选项4-1</el-menu-item>
-            </el-submenu>
-          </el-submenu>
-        </el-menu>
+  <div class="smartCatalog">
+    <!--<el-button type="primary" size="small" @click="openUpload">
+      <i class="el-icon-upload"></i>卷宗上传
+    </el-button>
+    <el-button type="primary" size="small" @click="openUpload">
+      <i class="el-icon-upload"></i>案件卷宗接收
+    </el-button>-->
+    <el-container style="height: 800px;background-color: #eee;">
+      <!-- 左侧目录 -->
+      <el-aside width="400px" style="margin-right: 5px;background-color: #fff;padding: 10px;">
+        <el-tabs type="card" @tab-click="handleClick" value="目录">
+          <el-tab-pane label="目录" name="目录" key="目录">
+            <el-input v-model="filterText"
+                      style="margin-bottom: 10px;"
+                      placeholder="输入关键字进行过滤">
+            </el-input>
+            <el-tabs v-model="activeName" type="card" @tab-click="handleClick" v-if="isShowTree">
+              <template v-for="item in configData.tabData">
+                <el-tab-pane :label="item" :name="item" :key="item">
+                  <el-tree :key="item"
+                           draggable
+                           @node-click="nodeClick"
+                           class="filter-tree"
+                           :data="treeData"
+                           :props="defaultProps"
+                           highlight-current
+                           :filter-node-method="filterNode"
+                           :render-content="renderContent"
+                           :ref="item">
+                  </el-tree>
+                </el-tab-pane>
+              </template>
+            </el-tabs>
+          </el-tab-pane>
+
+          <el-tab-pane label="书签" name="书签" key="书签">
+
+          </el-tab-pane>
+        </el-tabs>
       </el-aside>
-
-      <el-container>
-        <el-header style="text-align: right; font-size: 12px">
-          <el-dropdown>
-            <i class="el-icon-setting" style="margin-right: 15px"></i>
-            <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item>查看</el-dropdown-item>
-              <el-dropdown-item>新增</el-dropdown-item>
-              <el-dropdown-item>删除</el-dropdown-item>
-            </el-dropdown-menu>
-          </el-dropdown>
-          <span>王小虎</span>
-        </el-header>
-
+      <!-- 右侧内容 -->
+      <el-container style="background-color: #fff;">
+        <!--<el-header style="text-align: center; font-size: 12px;background-color: #515A6E">
+          <span>切换</span>
+        </el-header>-->
         <el-main>
-          <el-table :data="tableData">
-            <el-table-column prop="date" label="日期" width="140">
-            </el-table-column>
-            <el-table-column prop="name" label="姓名" width="120">
-            </el-table-column>
-            <el-table-column prop="address" label="地址">
-            </el-table-column>
-          </el-table>
+          <template v-if="isHideBaseInfo">
+            <el-card class="box-card" v-if="isShowTree">
+              <div slot="header" class="clearfix" style="text-align: center;font-size: 20px">
+                <b>{{ configData.caseInfo.title }}</b>
+              </div>
+              <div class="text item" style="text-indent:2em;font-size: 16px;line-height: 2.5em">
+                {{ configData.caseInfo.describe }}
+              </div>
+            </el-card>
+          </template>
+          <div v-if="!isHideBaseInfo" class="read-box">
+            <img src="../../../../public/img/demo.jpg" height="auto" width="850px" style="margin-top: 10px;"/>
+            <img src="../../../../public/img/demo.jpg" height="auto" width="850px" style="margin-top: 10px;"/>
+            <img src="../../../../public/img/demo.jpg" height="auto" width="850px" style="margin-top: 10px;"/>
+            <img src="../../../../public/img/demo.jpg" height="auto" width="850px" style="margin-top: 10px;"/>
+            <img src="../../../../public/img/demo.jpg" height="auto" width="850px" style="margin-top: 10px;"/>
+            <img src="../../../../public/img/demo.jpg" height="auto" width="850px" style="margin-top: 10px;"/>
+          </div>
         </el-main>
       </el-container>
     </el-container>
+    <!-- 上传模态框 -->
+    <el-dialog
+      title="卷宗上传"
+      :visible.sync="dialogVisible"
+      width="30%"
+      :before-close="() => dialogVisible = true">
+      <div style="text-align: center">
+        <el-switch v-model="isOpenError"
+                   active-color="#13ce66"
+                   inactive-color="#ff4949">
+        </el-switch>
+        <el-upload class="upload-demo" :auto-upload="false"
+                   action="https://jsonplaceholder.typicode.com/posts/"
+                   drag multiple>
+          <i class="el-icon-upload"></i>
+          <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
+          <div class="el-upload__tip" slot="tip">请选择图片、PDF或word进行上传</div>
+        </el-upload>
+      </div>
+      <div slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="submit" v-loading.fullscreen.lock="fullscreenLoading">自动编目</el-button>
+      </div>
+    </el-dialog>
+    <!-- 上传报告 -->
+    <el-dialog
+      title="错误报告"
+      :visible.sync="errDialogVisible"
+      width="55%"
+      :before-close="() => errDialogVisible = true">
+      <div style="text-align: center">
+        <el-table
+          :data="configData.errTableData"
+          style="width: 100%">
+          <template v-for="item in configData.columnData">
+            <el-table-column :prop="item.prop"
+                             :label="item.label">
+            </el-table-column>
+          </template>
+        </el-table>
+      </div>
+      <div slot="footer" class="dialog-footer">
+        <el-button @click="errDialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="errOk">确定</el-button>
+      </div>
+    </el-dialog>
   </div>
 </template>
 
 <script>
+  import configData from './smartCatalogConfig'
+
   export default {
     name: "smartCatalog",
     data(){
       return {
-        tableData: Array(20).fill(null)
+        configData,
+        // 是否开启错误流程
+        isOpenError: true,
+        defaultProps: {
+          children: 'children',
+          label: 'label'
+        },
+        filterText: '',
+        activeName: '全部',
+        dialogVisible: false,
+        errDialogVisible: false,
+        fullscreenLoading: false,
+        // 是否展示树
+        isShowTree: true,
+        // 是否隐藏基本信息
+        isHideBaseInfo: true,
       }
-    }
+    },
+    computed: {
+      treeData(){
+        return configData.treeData[ this.activeName ]
+      }
+    },
+    watch: {
+      filterText( val ){
+        this.$refs[ this.activeName ][ 0 ].filter(val)
+      }
+    },
+    methods: {
+      filterNode( value, data ){
+        if (!value) return true;
+        return data.label.indexOf(value) !== -1;
+      },
+      handleClick( e ){
+
+      },
+      openUpload(){
+        this.dialogVisible = true;
+      },
+      errOk(){
+        this.isShowTree = true;
+        this.errDialogVisible = false
+      },
+      // 模态框确认
+      submit(){
+        this.dialogVisible = false;
+        this.openFullScreen();
+      },
+      // 自动编目loading
+      openFullScreen(){
+        this.fullscreenLoading = true;
+        setTimeout(() => {
+          this.fullscreenLoading = false;
+          this.uploadAfter();
+        }, 3000);
+      },
+      // 调用OCR识别后
+      uploadAfter(){
+        if (this.isOpenError) {
+          return this.isShowTree = true;
+        } else {
+          this.errDialogVisible = true;
+          return this.isShowTree = false;
+        }
+      },
+      nodeClick( e ){
+        if (e.label == "一审公诉案件（共14页）") {
+          this.isHideBaseInfo = true;
+        } else {
+          this.isHideBaseInfo = false;
+        }
+      },
+      renderContent( h, { node, data, store } ){
+        return (
+          < div
+      class
+        = "custom-tree-node" >
+          < p >
+          < i
+      class
+        = { node.data.icon || 'el-icon-document' }
+        style = { node.data.style } > < /i>
+          < /p>
+          < p
+      class
+        = "tree-node" >
+          { node.data.label }
+          < /p>
+          < p
+        style = "flex: 1" >
+
+          < /p>
+        {
+          !node.data.isTitle && < p >
+          { node.data.indexNum }
+          页
+          < /p>
+        }
+      <
+        /div>
+
+      )
+      }
+    },
   }
 </script>
 
-<style scoped>
+<style>
+  .smartCatalog {
+    background-color: #fff;
+    padding: 10px;
+  }
 
+  .read-box {
+    background-color: #eee;
+    /*height: 100%;*/
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .image-box {
+    height: 400px;
+    width: 400px;
+    margin-top: 10px;
+    background-color: #f00;
+  }
+
+  .el-tree-node {
+    padding: 5px 0 !important;
+  }
+
+  .tree-node {
+    padding-left: 10px;
+  }
+
+  .custom-tree-node > p {
+    /*display: inline-block;*/
+  }
+
+  .custom-tree-node {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
 </style>

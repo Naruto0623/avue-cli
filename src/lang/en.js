@@ -71,7 +71,9 @@ export default {
     data: 'data',
     cache: 'cache',
     error: 'error',
-    test: 'test'
+    test: 'test',
+    smartCatalog: 'smartCatalog',
+    casesCard: 'casesCard',
   },
   login: {
     title: 'Login ',

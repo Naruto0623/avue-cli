@@ -9,8 +9,10 @@
     </transition>
     <transition-group name="fade">
       <template v-if="!keyCollapse">
-        <span class="avue-logo_title"
-              key="1">{{website.indexTitle}} </span>
+        <div class="avue-logo_title" key="1">
+          <img src="../../../public/img/logo.png" height="45px" width="auto"/>
+          <span style="padding: 0 15px">{{website.indexTitle}}</span>
+        </div>
       </template>
     </transition-group>
   </div>
@@ -52,7 +54,9 @@ export default {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
   color: rgba(255, 255, 255, 0.8);
   &_title {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     font-weight: 300;
     font-size: 20px;
