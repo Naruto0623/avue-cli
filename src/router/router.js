@@ -14,7 +14,6 @@ import AvueRouter from './avue-router';
 import i18n from '@/lang' // Internationalization
 import Store from '../store/';
 
-console.log(ViewsRouter);
 Vue.use(VueRouter);
 //创建路由
 export const createRouter = () => new VueRouter({

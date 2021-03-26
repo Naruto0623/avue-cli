@@ -144,7 +144,6 @@ const user = {
       return new Promise(resolve => {
         getMenu(parentId).then(( res ) => {
           const data = res.data.data;
-          console.log(data);
           // let menu = deepClone(data);
           // 本地菜单格式
           let menu = [
