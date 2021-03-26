@@ -40,7 +40,7 @@
         </el-tabs>
       </el-aside>
       <!-- 右侧内容 -->
-      <el-container style="background-color: #fff;">
+      <el-container style="background-color: #fff;position: relative;">
         <!--<el-header style="text-align: center; font-size: 12px;background-color: #515A6E">
           <span>切换</span>
         </el-header>-->
@@ -55,13 +55,27 @@
               </div>
             </el-card>
           </template>
-          <div v-if="!isHideBaseInfo" class="read-box">
-            <img src="../../../../public/img/demo.jpg" height="auto" width="850px" style="margin-top: 10px;"/>
-            <img src="../../../../public/img/demo.jpg" height="auto" width="850px" style="margin-top: 10px;"/>
-            <img src="../../../../public/img/demo.jpg" height="auto" width="850px" style="margin-top: 10px;"/>
-            <img src="../../../../public/img/demo.jpg" height="auto" width="850px" style="margin-top: 10px;"/>
-            <img src="../../../../public/img/demo.jpg" height="auto" width="850px" style="margin-top: 10px;"/>
-            <img src="../../../../public/img/demo.jpg" height="auto" width="850px" style="margin-top: 10px;"/>
+          <div v-if="!isHideBaseInfo" class="read-box" id="box">
+            <img src="../../../../public/img/demo.jpg" id="img1"
+                 height="auto" width="850px" style="margin-top: 10px;"/>
+            <img src="../../../../public/img/demo.jpg" id="img2"
+                 height="auto" width="850px" style="margin-top: 10px;"/>
+            <img src="../../../../public/img/demo.jpg" id="img3"
+                 height="auto" width="850px" style="margin-top: 10px;"/>
+            <img src="../../../../public/img/demo.jpg" id="img4"
+                 height="auto" width="850px" style="margin-top: 10px;"/>
+            <img src="../../../../public/img/demo.jpg" id="img5"
+                 height="auto" width="850px" style="margin-top: 10px;"/>
+            <img src="../../../../public/img/demo.jpg" id="img6"
+                 height="auto" width="850px" style="margin-top: 10px;"/>
+            <div class="toods">
+              <i class="toods-icon el-icon-zoom-in"></i>
+              <i class="toods-icon el-icon-zoom-out"></i>
+              <i class="toods-icon el-icon-refresh-right"></i>
+              <i class="toods-icon el-icon-refresh-left"></i>
+              <i class="toods-icon el-icon-star-off"></i>
+              <i class="toods-icon el-icon-edit-outline"></i>
+            </div>
           </div>
         </el-main>
       </el-container>
@@ -187,12 +201,16 @@
           return this.isShowTree = false;
         }
       },
+      // 点击树节点跳转
       nodeClick( e ){
         if (e.label == "一审公诉案件（共14页）") {
           this.isHideBaseInfo = true;
         } else {
           this.isHideBaseInfo = false;
         }
+        let toId = '#' + configData.nodeId[ e.id ] || 'img6';
+        let boxDom = document.getElementById('box');
+        boxDom.querySelector(toId).scrollIntoView(true);
       },
       renderContent( h, { node, data, store } ){
         return (
@@ -243,6 +261,27 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+  }
+
+  .toods {
+    width: 35px;
+    height: 220px;
+    padding: 5px;
+    background-color: #20222A;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 35%;
+  }
+
+  .toods-icon {
+    margin-top: 10px;
+    color: #B7987B;
+    font-size: 24px;
   }
 
   .image-box {
