@@ -33,7 +33,6 @@
               </template>
             </el-tabs>
           </el-tab-pane>
-
           <el-tab-pane label="书签" name="书签" key="书签">
 
           </el-tab-pane>
@@ -73,8 +72,9 @@
               <i class="toods-icon el-icon-zoom-out"></i>
               <i class="toods-icon el-icon-refresh-right"></i>
               <i class="toods-icon el-icon-refresh-left"></i>
-              <i class="toods-icon el-icon-star-off"></i>
+              <i class="toods-icon el-icon-collection-tag"></i>
               <i class="toods-icon el-icon-edit-outline"></i>
+              <i class="toods-icon el-icon-upload2"></i>
             </div>
           </div>
         </el-main>
@@ -265,7 +265,7 @@
 
   .toods {
     width: 35px;
-    height: 220px;
+    height: 250px;
     padding: 5px;
     background-color: #20222A;
     border-radius: 5px;
