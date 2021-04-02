@@ -1,11 +1,11 @@
 export default {
-  tabData: ['全部', '起诉书', '证据', '涉案人员'],
+  tabData: ['全部', '起诉意见书', '证据', '犯罪嫌疑人'],
   // 树节点
   treeData: {
     '全部': [
       {
         id: 1,
-        label: '一审公诉案件（共14页）',
+        label: '葛某某危险驾驶案-一审公诉案件（共14页）',
         icon: 'el-icon-message',
         indexNum: 1,
         isTitle: true,
@@ -140,7 +140,7 @@ export default {
               }
             ]
           },
-          {
+          /*{
             id: 30,
             label: '其他（共2页）',
             icon: '',
@@ -160,43 +160,34 @@ export default {
                 indexNum: 14,
               },
             ]
-          }
+          }*/
         ]
       },
     ],
     '起诉书': [
       {
-        id: 4,
-        label: '起诉意见书（共3页）',
+        id: 9,
+        label: '起诉意见书第1页',
         icon: '',
         indexNum: 1,
-        isTitle: true,
-        children: [
-          {
-            id: 9,
-            label: '起诉意见书第1页',
-            icon: '',
-            indexNum: 1,
-            children: [],
+        children: [],
 
-          },
-          {
-            id: 10,
-            label: '起诉意见书第2页',
-            icon: '',
-            indexNum: 2,
-            children: [],
-
-          },
-          {
-            id: 10,
-            label: '起诉意见书第3页',
-            icon: '',
-            indexNum: 3,
-            children: []
-          }
-        ]
       },
+      {
+        id: 10,
+        label: '起诉意见书第2页',
+        icon: '',
+        indexNum: 2,
+        children: [],
+
+      },
+      {
+        id: 10,
+        label: '起诉意见书第3页',
+        icon: '',
+        indexNum: 3,
+        children: []
+      }
     ],
     '证据': [
       {

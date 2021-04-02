@@ -9,13 +9,13 @@
     <el-container style="height: 800px;background-color: #eee;">
       <!-- 左侧目录 -->
       <el-aside width="400px" style="margin-right: 5px;background-color: #fff;padding: 10px;">
-        <el-tabs type="card" @tab-click="handleClick" value="目录">
+        <el-tabs @tab-click="handleClick" value="目录">
           <el-tab-pane label="目录" name="目录" key="目录">
             <el-input v-model="filterText"
                       style="margin-bottom: 10px;"
                       placeholder="输入关键字进行过滤">
             </el-input>
-            <el-tabs v-model="activeName" type="card" @tab-click="handleClick" v-if="isShowTree">
+            <el-tabs v-model="activeName" @tab-click="typeHandleClick" v-if="isShowTree">
               <template v-for="item in configData.tabData">
                 <el-tab-pane :label="item" :name="item" :key="item">
                   <el-tree :key="item"
@@ -44,17 +44,7 @@
           <span>切换</span>
         </el-header>-->
         <el-main>
-          <template v-if="isHideBaseInfo">
-            <el-card class="box-card" v-if="isShowTree">
-              <div slot="header" class="clearfix" style="text-align: center;font-size: 20px">
-                <b>{{ configData.caseInfo.title }}</b>
-              </div>
-              <div class="text item" style="text-indent:2em;font-size: 16px;line-height: 2.5em">
-                {{ configData.caseInfo.describe }}
-              </div>
-            </el-card>
-          </template>
-          <div v-if="!isHideBaseInfo" class="read-box" id="box">
+          <div class="read-box" id="box">
             <img src="../../../../public/img/demo.jpg" id="img1"
                  height="auto" width="850px" style="margin-top: 10px;"/>
             <img src="../../../../public/img/demo.jpg" id="img2"
@@ -172,6 +162,11 @@
       handleClick( e ){
 
       },
+      typeHandleClick(e){
+        let toId = '#' + configData.nodeId[ 9 ] || 'img6';
+        let boxDom = document.getElementById('box');
+        boxDom.querySelector(toId).scrollIntoView(true);
+      },
       openUpload(){
         this.dialogVisible = true;
       },
@@ -203,7 +198,7 @@
       },
       // 点击树节点跳转
       nodeClick( e ){
-        if (e.label == "一审公诉案件（共14页）") {
+        if (e.label == "葛某某危险驾驶案-一审公诉案件（共14页）") {
           this.isHideBaseInfo = true;
         } else {
           this.isHideBaseInfo = false;
@@ -267,7 +262,7 @@
     width: 35px;
     height: 250px;
     padding: 5px;
-    background-color: #20222A;
+    background-color: #1b5e9c;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -280,7 +275,7 @@
 
   .toods-icon {
     margin-top: 10px;
-    color: #B7987B;
+    color: #fff;
     font-size: 24px;
   }
 
@@ -292,7 +287,7 @@
   }
 
   .el-tree-node {
-    padding: 5px 0 !important;
+    /*padding: 5px 0 !important;*/
   }
 
   .tree-node {

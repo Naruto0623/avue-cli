@@ -5,7 +5,7 @@ export default {
     '全部': [
       {
         id: 1,
-        label: '一审公诉案件（共14页）',
+        label: '葛某某危险驾驶案-一审公诉案件（共14页）',
         icon: 'el-icon-message',
         indexNum: 1,
         isTitle: true,
