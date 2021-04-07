@@ -1,69 +1,89 @@
 <template>
   <div class="casesCard">
     <el-container style="height: 800px;background-color: #eee;position: relative;">
+      <!-- 折叠阅卷 -->
+      <transition name="custom-classes-transition"
+                  enter-active-class="animated bounceInUp">
+        <div class="left-text" v-show="!isShowBook">
+          <span @click="hideBook(1)" class="text-tag">电 子 卷 宗</span>
+        </div>
+      </transition>
       <!-- 左侧预览 -->
-      <el-container style="background-color: #fff;position: relative;">
-        <!--<el-header style="text-align: center; font-size: 12px;background-color: #515A6E">
-          <span>切换</span>
-        </el-header>-->
-        <el-main>
-          <div class="read-box" id="box">
-            <!-- 卷宗预览 -->
-            <div class="read" @click="isShowDrawer = false">
-              <img src="../../../../public/img/demo.png" id="img1"
-                   height="auto" width="850px" style="margin-top: 10px;"/>
-              <img src="../../../../public/img/demo.png" id="img2"
-                   height="auto" width="850px" style="margin-top: 10px;"/>
-              <img src="../../../../public/img/demo.png" id="img3"
-                   height="auto" width="850px" style="margin-top: 10px;"/>
-              <img src="../../../../public/img/demo.png" id="img4"
-                   height="auto" width="850px" style="margin-top: 10px;"/>
-              <img src="../../../../public/img/demo.png" id="img5"
-                   height="auto" width="850px" style="margin-top: 10px;"/>
-              <img src="../../../../public/img/demo.png" id="img6"
-                   height="auto" width="850px" style="margin-top: 10px;"/>
-            </div>
-            <!-- 阅卷工具条 -->
-            <div class="toods-read" draggable>
-              <el-tooltip class="item" effect="dark" content="目录" placement="left">
-                <i class="toods-icon el-icon-s-management" @click="openDrawer"></i>
-              </el-tooltip>
-              <el-tooltip class="item" effect="dark" content="放大" placement="left">
-                <i class="toods-icon el-icon-zoom-in"></i>
-              </el-tooltip>
-              <el-tooltip class="item" effect="dark" content="缩小" placement="left">
-                <i class="toods-icon el-icon-zoom-out"></i>
-              </el-tooltip>
-              <el-tooltip class="item" effect="dark" content="右旋转" placement="left">
-                <i class="toods-icon el-icon-refresh-right"></i>
-              </el-tooltip>
-              <el-tooltip class="item" effect="dark" content="左旋转" placement="left">
-                <i class="toods-icon el-icon-refresh-left"></i>
-              </el-tooltip>
-              <el-tooltip class="item" effect="dark" content="添加书签" placement="left">
-                <i class="toods-icon el-icon-collection-tag"></i>
-              </el-tooltip>
-              <el-tooltip class="item" effect="dark" content="批注" placement="left">
-                <i class="toods-icon el-icon-edit-outline"></i>
-              </el-tooltip>
-              <el-tooltip class="item" effect="dark" content="回到顶部" placement="left">
-                <i class="toods-icon el-icon-upload2"></i>
-              </el-tooltip>
-            </div>
-            <!-- 左侧卷宗目录 -->
-            <transition name="custom-classes-transition"
-                        enter-active-class="animated bounceInLeft"
-                        leave-active-class="animated bounceOutLeft">
-              <div class="logs" v-show="isShowDrawer">
-                <cataLog @nodeClick="nodeClick" @typeHandleClick="typeHandleClick"/>
-              </div>
-            </transition>
+      <transition name="custom-classes-transition"
+                  enter-active-class="animated bounceInLeft">
+        <el-container v-show="isShowBook" style="position: relative;justify-content: center;">
+          <div class="left-text" v-if="!isShowBook">
+            <span class="text-tag">电 子 卷 宗</span>
           </div>
-        </el-main>
-      </el-container>
+          <div style="display: flex;flex-direction: column;height: 100%;width: 100%;">
+            <el-header class="header-box">
+              <span>电子卷宗</span>
+              <span style="flex: 1"></span>
+              <span @click="hideBook"><i style="font-size: 16px;" class="el-icon-d-arrow-left"></i></span>
+            </el-header>
+            <el-main style="flex: 1">
+              <div class="read-box" id="box">
+                <!-- 卷宗预览 -->
+                <div class="read" @click="isShowDrawer = false">
+                  <img src="../../../../public/img/demo.png" id="img1"
+                       height="auto" width="850px" style="margin-top: 10px;"/>
+                  <img src="../../../../public/img/demo.png" id="img2"
+                       height="auto" width="850px" style="margin-top: 10px;"/>
+                  <img src="../../../../public/img/demo.png" id="img3"
+                       height="auto" width="850px" style="margin-top: 10px;"/>
+                  <img src="../../../../public/img/demo.png" id="img4"
+                       height="auto" width="850px" style="margin-top: 10px;"/>
+                  <img src="../../../../public/img/demo.png" id="img5"
+                       height="auto" width="850px" style="margin-top: 10px;"/>
+                  <img src="../../../../public/img/demo.png" id="img6"
+                       height="auto" width="850px" style="margin-top: 10px;"/>
+                </div>
+                <!-- 阅卷工具条 -->
+                <div class="toods-read" draggable>
+                  <el-tooltip class="item" effect="dark" content="目录" placement="left">
+                    <i class="toods-icon el-icon-s-management" @click="openDrawer"></i>
+                  </el-tooltip>
+                  <el-tooltip class="item" effect="dark" content="放大" placement="left">
+                    <i class="toods-icon el-icon-zoom-in"></i>
+                  </el-tooltip>
+                  <el-tooltip class="item" effect="dark" content="缩小" placement="left">
+                    <i class="toods-icon el-icon-zoom-out"></i>
+                  </el-tooltip>
+                  <el-tooltip class="item" effect="dark" content="右旋转" placement="left">
+                    <i class="toods-icon el-icon-refresh-right"></i>
+                  </el-tooltip>
+                  <el-tooltip class="item" effect="dark" content="左旋转" placement="left">
+                    <i class="toods-icon el-icon-refresh-left"></i>
+                  </el-tooltip>
+                  <el-tooltip class="item" effect="dark" content="添加书签" placement="left">
+                    <i class="toods-icon el-icon-collection-tag"></i>
+                  </el-tooltip>
+                  <el-tooltip class="item" effect="dark" content="批注" placement="left">
+                    <i class="toods-icon el-icon-edit-outline"></i>
+                  </el-tooltip>
+                  <el-tooltip class="item" effect="dark" content="回到顶部" placement="left">
+                    <i class="toods-icon el-icon-upload2"></i>
+                  </el-tooltip>
+                </div>
+                <!-- 左侧卷宗目录 -->
+                <transition name="custom-classes-transition"
+                            enter-active-class="animated bounceInLeft"
+                            leave-active-class="animated bounceOutLeft">
+                  <div class="logs" v-show="isShowDrawer">
+                    <cataLog @nodeClick="nodeClick" @typeHandleClick="typeHandleClick"/>
+                  </div>
+                </transition>
+              </div>
+            </el-main>
+          </div>
+        </el-container>
+      </transition>
       <!-- 右侧表单 -->
-      <el-aside width="800px" style="margin-right: 5px;background-color: #fff;padding: 10px;">
-        <el-card class="box-card">
+      <transition name="custom-classes-transition"
+                  enter-active-class="animated bounceInUp">
+      </transition>
+      <el-aside :width="rightWidth" style="margin-right: 5px;background-color: #fff;padding: 10px;">
+        <el-card v-if="!isNext" class="box-card">
           <div slot="header" class="clearfix">
             <span>提取受理信息</span>
           </div>
@@ -71,7 +91,7 @@
             <el-collapse v-model="activeNames">
               <el-collapse-item name="1" title="受理标准">
                 <el-tree
-                  :data="standardList"
+                  :data="configData.standardList"
                   show-checkbox
                   default-expand-all
                   node-key="id"
@@ -85,24 +105,49 @@
                 </el-tree>
               </el-collapse-item>
               <el-collapse-item name="2" title="一审公诉（刑检）受理信息">
-                <avue-form ref="form" v-model="form1" :option="option1" @reset-change="emptytChange" @submit="submit"></avue-form>
+                <avue-form ref="form" v-model="form1" :option="configData.option1" @reset-change="emptytChange" @submit="submit"></avue-form>
               </el-collapse-item>
             </el-collapse>
           </div>
+        </el-card>
+        <!-- 下一步案卡 -->
+        <el-card v-if="isNext" class="box-card">
+          <el-tabs v-model="activeName" @tab-click="handleClick">
+            <el-tab-pane label="案卡" name="1">
+              <el-row>
+                <el-col :span="6">
+                  <el-tree :data="configData.cardLogData"
+                           @node-click="chooseTree"
+                           node-key="id"
+                           :default-expanded-keys="[2, 3]"
+                           :props="defaultProps">
+                  </el-tree>
+                </el-col>
+                <el-col :span="18">
+                  <el-card class="box-card">
+                    <div slot="header" class="clearfix">
+                      <span>{{ title }}</span>
+                    </div>
+                    <el-tabs v-model="activeCard" @tab-click="handleClick">
+                      <el-tab-pane label="基本信息" name="10">
+                        <avue-form ref="form" v-model="form1" :option="configData.option2" @reset-change="emptytChange" @submit="submit"></avue-form>
+                      </el-tab-pane>
+                      <el-tab-pane label="侵犯知识产权情况" name="20">
+                        <avue-form ref="form" v-model="form1" :option="configData.option1" @reset-change="emptytChange" @submit="submit"></avue-form>
+                      </el-tab-pane>
+                    </el-tabs>
+                  </el-card>
+                </el-col>
+              </el-row>
+            </el-tab-pane>
+            <el-tab-pane label="在办文书" name="2">在办文书</el-tab-pane>
+          </el-tabs>
         </el-card>
       </el-aside>
       <!--<div style="position: absolute;top: 10px;height: 200px;width: 40px;background-color: #f00">
         测试
       </div>-->
     </el-container>
-    <!-- 左侧目录折叠面板 -->
-    <!--<el-drawer title="电子卷宗目录"
-               direction="ltr"
-               :modal="false"
-               :append-to-body="true"
-               :visible.sync="isShowDrawer">
-      <span>智能编目</span>
-    </el-drawer>-->
   </div>
 </template>
 
@@ -113,14 +158,21 @@
   export default {
     name: "casesCard",
     components: {
-      cataLog
+      cataLog,
     },
     data(){
       return {
+        configData,
+        title: '审查起诉案件信息',
+        activeName: '1',
+        activeCard: '10',
+        // 右侧表单宽度
+        rightWidth: '800px',
+        isShowBook: true,
+        // 当前是否显示下一步的内容
+        isNext: false,
         isShowDrawer: false,
         form1: {},
-        option1: configData.option1,
-        option2: configData.option2,
         // 折叠面板展开项
         activeNames: ['1', '2'],
         // 受理标准
@@ -132,6 +184,23 @@
       }
     },
     methods: {
+      handleClick( e ){
+
+      },
+      // 隐藏显示预览页面
+      hideBook( type ){
+        this.isShowBook = !this.isShowBook;
+        this.rightWidth = type == 1? '800px': '100%';
+        if (type == 1) {
+          this.configData.option2.column.forEach(ele => {
+            ele.span = 24
+          })
+        } else {
+          this.configData.option2.column.forEach(ele => {
+            ele.span = 12
+          })
+        }
+      },
       openDrawer(){
         this.isShowDrawer = !this.isShowDrawer;
       },
@@ -139,7 +208,12 @@
 
       },
       submit(){
-
+        this.isNext = true;
+        this.hideBook();
+      },
+      // 案卡书点击
+      chooseTree( e ){
+        this.title = e.label;
       },
       // 点击树节点跳转
       nodeClick( e ){
@@ -166,6 +240,37 @@
   .casesCard {
     background-color: #1B5E9C;
     padding: 10px;
+  }
+
+  .header-box {
+    display: flex;
+    line-height: 60px;
+    font-size: 16px;
+    color: #1B5E9C;
+    font-weight: 800;
+    background-color: #fff;
+    border-right: 5px solid #1B5E9C;
+  }
+
+  .left-text {
+    writing-mode: vertical-lr;
+    width: 30px;
+    background-color: #fff;
+    margin-right: 5px;
+    line-height: 30px;
+    padding: 20px 0;
+    color: #1B5E9C;
+    font-weight: 800;
+  }
+
+  .el-col {
+    margin-bottom: 0 !important;
+  }
+
+  .text-tag {
+    border-bottom: 1px solid #1B5E9C;
+    padding: 10px 0;
+    cursor: pointer;
   }
 
   .el-collapse-item__header {

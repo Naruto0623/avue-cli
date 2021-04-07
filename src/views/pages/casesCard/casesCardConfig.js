@@ -64,11 +64,11 @@ export default {
         prop: '1617705817933_28095',
         rules: [
           {
-            required: true,
+            required: null,
             message: '案件名称必须填写'
           }
         ],
-        required: true,
+        required: null,
         showWordLimit: true
       },
       {
@@ -77,10 +77,10 @@ export default {
         span: 24,
         display: true,
         prop: '1617705836685_617',
-        required: true,
+        required: null,
         rules: [
           {
-            required: true,
+            required: null,
             message: '移诉罪民必须填写'
           }
         ]
@@ -93,7 +93,7 @@ export default {
         prop: '1617706135046_79564',
         rules: [
           {
-            required: true,
+            required: null,
             message: '侦（调）查机关必须填写'
           }
         ],
@@ -109,7 +109,7 @@ export default {
         prop: '1617706249044_87082',
         rules: [
           {
-            required: true,
+            required: null,
             message: '侦（调）查机关类别必须填写'
           }
         ],
@@ -122,10 +122,10 @@ export default {
         display: true,
         prop: '1617706295573_50040',
         showWordLimit: true,
-        required: true,
+        required: null,
         rules: [
           {
-            required: true,
+            required: null,
             message: '侦（调）查机关案号必须填写'
           }
         ]
@@ -138,7 +138,7 @@ export default {
         prop: '1617706335218_58377',
         rules: [
           {
-            required: true,
+            required: null,
             message: '移送单位必须填写'
           }
         ],
@@ -236,6 +236,372 @@ export default {
     detail: false,
     readonly: false
   },
+  option2: {
+    column: [
+      {
+        type: 'input',
+        label: '部门受案号',
+        span: 24,
+        display: true,
+        prop: '1617790970598_31535',
+        readonly: true,
+        required: true,
+        rules: [
+          {
+            required: true,
+            message: '部门受案号必须填写'
+          }
+        ]
+      },
+      {
+        type: 'datetime',
+        label: '日期时间',
+        span: 12,
+        display: true,
+        format: 'yyyy-MM-dd HH:mm:ss',
+        valueFormat: 'yyyy-MM-dd HH:mm:ss',
+        prop: '1617791000482_44269',
+        disabled: true,
+        required: true,
+        rules: [
+          {
+            required: true,
+            message: '日期时间必须填写'
+          }
+        ]
+      },
+      {
+        type: 'input',
+        label: '案件名称',
+        span: 12,
+        display: true,
+        prop: '1617791120227_27550',
+        readonly: true,
+        required: true,
+        rules: [
+          {
+            required: true,
+            message: '案件名称必须填写'
+          }
+        ]
+      },
+      {
+        type: 'input',
+        label: '（不）起诉意见书文号',
+        span: 12,
+        display: true,
+        prop: '1617791143584_90239',
+        rules: [
+          {
+            required: true,
+            message: '（不）起诉意见书文号必须填写'
+          }
+        ],
+        required: true,
+        showWordLimit: true
+      },
+      {
+        type: 'input',
+        label: '移送单位',
+        span: 12,
+        display: true,
+        prop: '1617791287761_49315',
+        rules: [
+          {
+            required: true,
+            message: '移送单位必须填写'
+          }
+        ],
+        required: true
+      },
+      {
+        type: 'radio',
+        label: '监所案件',
+        dicData: [
+          {
+            label: '是',
+            value: '0'
+          },
+          {
+            label: '否',
+            value: '1'
+          }
+        ],
+        span: 12,
+        display: true,
+        props: {
+          label: 'label',
+          value: 'value'
+        },
+        prop: '1617791353830_70454',
+        required: true,
+        rules: [
+          {
+            required: true,
+            message: '请选择监所案件'
+          }
+        ]
+      },
+      {
+        type: 'input',
+        label: '侦（调查）察机关',
+        span: 12,
+        display: true,
+        prop: '1617791384380_95754',
+        required: true,
+        rules: [
+          {
+            required: true,
+            message: '侦（调查）察机关必须填写'
+          }
+        ]
+      },
+      {
+        type: 'input',
+        label: '侦（调查）察机关类别',
+        span: 12,
+        display: true,
+        prop: '1617791419225_56453',
+        rules: [
+          {
+            required: true,
+            message: '侦（调查）察机关类别必须填写'
+          }
+        ],
+        required: true
+      },
+      {
+        type: 'input',
+        label: '移送意见',
+        span: 12,
+        display: true,
+        prop: '1617791444635_21270',
+        rules: [
+          {
+            required: true,
+            message: '移送意见必须填写'
+          }
+        ],
+        required: true
+      },
+      {
+        type: 'input',
+        label: '移速罪名',
+        span: 12,
+        display: true,
+        prop: '1617791461707_15715',
+        rules: []
+      },
+      {
+        type: 'input',
+        label: '移速其他罪名',
+        span: 12,
+        display: true,
+        prop: '1617791479724_43996'
+      },
+      {
+        type: 'radio',
+        label: '他院受理审查起诉后改',
+        dicData: [
+          {
+            label: '是',
+            value: '0'
+          },
+          {
+            label: '否',
+            value: '1'
+          }
+        ],
+        span: 12,
+        display: true,
+        props: {
+          label: 'label',
+          value: 'value'
+        },
+        prop: '1617791507016_24498',
+        required: true,
+        rules: [
+          {
+            required: true,
+            message: '请选择单选框组'
+          }
+        ]
+      },
+      {
+        type: 'radio',
+        label: '侦（调查）察机关建议适用认罪认罚',
+        dicData: [
+          {
+            label: '是',
+            value: '0'
+          },
+          {
+            label: '否',
+            value: '1'
+          }
+        ],
+        span: 12,
+        display: true,
+        props: {
+          label: 'label',
+          value: 'value'
+        },
+        prop: '1617791563084_72517',
+        rules: [
+          {
+            required: true,
+            message: '请选择侦（调查）察机关建议适用认罪认罚'
+          }
+        ],
+        required: true
+      },
+      {
+        type: 'radio',
+        label: '属于适用缺席审判程序案件',
+        dicData: [
+          {
+            label: '是',
+            value: '0'
+          },
+          {
+            label: '否',
+            value: '1'
+          }
+        ],
+        span: 12,
+        display: true,
+        props: {
+          label: 'label',
+          value: 'value'
+        },
+        prop: '1617791605316_51436',
+        required: true,
+        rules: [
+          {
+            required: true,
+            message: '请选择属于适用缺席审判程序案件'
+          }
+        ]
+      },
+      {
+        type: 'radio',
+        label: '单位犯罪',
+        dicData: [
+          {
+            label: '是',
+            value: '0'
+          },
+          {
+            label: '否',
+            value: '1'
+          }
+        ],
+        span: 12,
+        display: true,
+        props: {
+          label: 'label',
+          value: 'value'
+        },
+        prop: '1617791670901_65410',
+        rules: []
+      },
+      {
+        type: 'radio',
+        label: '涉台案件',
+        dicData: [
+          {
+            label: '是',
+            value: '0'
+          },
+          {
+            label: '否',
+            value: '1'
+          }
+        ],
+        span: 12,
+        display: true,
+        props: {
+          label: 'label',
+          value: 'value'
+        },
+        prop: '1617791701885_61873',
+        rules: []
+      },
+      {
+        type: 'radio',
+        label: '涉外案件',
+        dicData: [
+          {
+            label: '是',
+            value: '0'
+          },
+          {
+            label: '否',
+            value: '1'
+          }
+        ],
+        span: 12,
+        display: true,
+        props: {
+          label: 'label',
+          value: 'value'
+        },
+        prop: '1617791767707_57293'
+      },
+      {
+        type: 'radio',
+        label: '督办案件',
+        dicData: [
+          {
+            label: '是',
+            value: '0'
+          },
+          {
+            label: '否',
+            value: '1'
+          }
+        ],
+        span: 12,
+        display: true,
+        props: {
+          label: 'label',
+          value: 'value'
+        },
+        prop: '1617791790584_37764'
+      },
+      {
+        type: 'radio',
+        label: '关注案件',
+        dicData: [
+          {
+            label: '是',
+            value: '0'
+          },
+          {
+            label: '否',
+            value: '1'
+          }
+        ],
+        span: 24,
+        display: true,
+        props: {
+          label: 'label',
+          value: 'value'
+        },
+        prop: '1617791886682_78065'
+      }
+    ],
+    labelPosition: 'right',
+    labelSuffix: '：',
+    labelWidth: 180,
+    gutter: 0,
+    menuBtn: true,
+    submitBtn: true,
+    submitText: '提交',
+    emptyBtn: true,
+    emptyText: '清空',
+    menuPosition: 'center'
+  },
   // 树节点对应跳转预览图片
   nodeId: {
     6: 'img6',
@@ -251,4 +617,28 @@ export default {
     71: 'img4',
     80: 'img5',
   },
+  cardLogData: [
+    {
+      id: 2,
+      label: '案件信息',
+      children: [
+        {
+          id: 5,
+          label: '审查起诉案件信息'
+        },
+        {
+          id: 6,
+          label: '审判活动监督情况'
+        },
+        {
+          id: 6,
+          label: '犯罪嫌疑人/单位'
+        },
+        {
+          id: 6,
+          label: '被害人/单位'
+        },
+      ]
+    },
+  ]
 }
