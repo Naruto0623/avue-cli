@@ -260,7 +260,7 @@
 
   .toods {
     width: 35px;
-    height: 250px;
+    height: 350px;
     padding: 5px;
     background-color: #1b5e9c;
     border-radius: 5px;

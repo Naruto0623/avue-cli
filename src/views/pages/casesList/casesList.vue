@@ -3,7 +3,7 @@
     <el-card class="box-card">
       <avue-crud :option="option"
                  :page="page" simplePage
-                 @row-dblclick="handleRowClick"
+                 @row-click="handleRowClick"
                  :data="data">
         <template slot="header">
           <el-row style="padding: 5px 0">

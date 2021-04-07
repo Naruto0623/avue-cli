@@ -12,9 +12,11 @@
     "gitpush": "node ./script/gitpush.js"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
     "avue-plugin-ueditor": "^0.0.9",
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
+    "chalk": "^2.0.1",
     "classlist-polyfill": "^1.2.0",
     "element-ui": "^2.4.5",
     "js-cookie": "^2.2.0",
@@ -22,7 +24,6 @@
     "nprogress": "^0.2.0",
     "script-loader": "^0.7.2",
     "shelljs": "^0.7.6",
-    "chalk": "^2.0.1",
     "sortablejs": "^1.10.0-rc2",
     "vue": "^2.5.16",
     "vue-axios": "^2.1.2",
