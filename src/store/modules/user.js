@@ -165,11 +165,19 @@ const user = {
             },
             {
               children: [],
-              component: "views/pages/smartCatalog/smartCatalog",
+              component: "views/pages/casesCard/casesCard",
               icon: "el-icon-news",
               label: "案卡回填",
               meta: { i18n: "casesCard" },
               path: "/casesCard",
+            },
+            {
+              children: [],
+              component: "views/pages/casesList/casesList",
+              icon: "el-icon-news",
+              label: "案件列表",
+              meta: { i18n: "casesList" },
+              path: "/casesList",
             }
           ];
           menu.forEach(ele => {
