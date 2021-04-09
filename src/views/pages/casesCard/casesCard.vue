@@ -105,7 +105,12 @@
                 </el-tree>
               </el-collapse-item>
               <el-collapse-item name="2" title="一审公诉（刑检）受理信息">
-                <avue-form ref="form" v-model="form1" :option="configData.option1" @reset-change="emptytChange" @submit="submit"></avue-form>
+                <avue-form ref="form0" v-model="form1"
+                           :option="configData.option1"
+                           :status-icon="true"
+                           @reset-change="emptytChange"
+                           @submit="submit">
+                </avue-form>
               </el-collapse-item>
             </el-collapse>
           </div>
@@ -211,6 +216,11 @@
         this.isNext = true;
         this.hideBook();
       },
+      alertMessage() {
+        console.log(this.$refs.form0.getPropRef('name').$parent);
+        this.$refs.form0.getPropRef('name').$parent.validateState = 'error';
+        this.$refs.form0.getPropRef('name').$parent.validateMessage = '请您核对以上信息';
+      },
       // 案卡书点击
       chooseTree( e ){
         this.title = e.label;
@@ -232,6 +242,9 @@
         let boxDom = document.getElementById('box');
         boxDom.querySelector(toId).scrollIntoView(true);
       },
+    },
+    mounted(){
+      setTimeout(() => this.alertMessage(), 2000)
     }
   }
 </script>

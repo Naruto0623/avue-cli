@@ -61,10 +61,10 @@ export default {
         label: '案件名称',
         span: 24,
         display: true,
-        prop: '1617705817933_28095',
+        prop: 'name',
         rules: [
           {
-            required: null,
+            required: false,
             message: '案件名称必须填写'
           }
         ],

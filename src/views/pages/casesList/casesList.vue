@@ -3,7 +3,7 @@
     <el-card class="box-card">
       <avue-crud :option="option"
                  :page="page" simplePage
-                 @row-click="handleRowClick"
+                 @row-dblclick="handleRowClick"
                  :data="data">
         <template slot="header">
           <el-row style="padding: 5px 0">
@@ -26,6 +26,7 @@
 
 <script>
   import configData from './caseListConfig'
+
   export default {
     name: "casesList",
     data(){
@@ -41,11 +42,11 @@
     },
     methods: {
       // 案件接收
-      receive() {
-
+      receive( row ){
+        this.handleRowClick(row);
       },
       // 案件详情跳转
-      handleRowClick (row, event, column) {
+      handleRowClick( row, event, column ){
         this.$router.push({
           path: '/casesCard/index',
           query: {

@@ -5,14 +5,14 @@
     <!--<setting></setting>-->
     <div class="avue-layout"
          :class="{'avue-layout--horizontal':isHorizontal}">
+      <!-- 顶部导航栏 -->
+      <top ref="top" />
       <div class="avue-sidebar">
         <!-- 左侧导航栏 -->
         <logo />
         <sidebar />
       </div>
       <div class="avue-main">
-        <!-- 顶部导航栏 -->
-        <top ref="top" />
         <!-- 顶部标签卡 -->
         <tags />
         <transition name="fade-scale">
