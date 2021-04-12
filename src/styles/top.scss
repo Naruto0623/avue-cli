@@ -1,11 +1,11 @@
-$height:64px;
+$height:40px;
 .avue-top {
-    padding: 0 20px;
+    padding: 0 18px;
     position: relative;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
     color: rgba(0, 0, 0, .65);
     font-size: 28px;
-    height: $height;
+    height: 46px;
     line-height: $height;
     box-sizing: border-box;
     white-space: nowrap;
@@ -38,16 +38,7 @@ $height:64px;
 }
 
 .top-search {
-    line-height: $height;
-    position: absolute !important;
-    left: 20px;
-    top:0;
     width: 400px !important;
-    .el-input__inner {
-        font-size: 13px;
-        border: none;
-        background-color: transparent;
-    }
 }
 
 .top-bar__img {
@@ -105,4 +96,5 @@ $height:64px;
     white-space: nowrap;
     font-size: inherit;
     font-weight: 400;
+    text-align: center;
 }

@@ -9,10 +9,10 @@
   }
   .avue-logo{
     .avue-logo_title{
-      background-image:-webkit-gradient(linear,left top,left bottom,from($color),to( $is_active_color)); 
-      -webkit-background-clip:text; 
-      -webkit-text-fill-color:transparent; 
-      font-weight: 400;
+      background-image:-webkit-gradient(linear,left top,left bottom,from($color),to( $is_active_color));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      //font-weight: 400;
     }
   }
   .avue-breadcrumb{
@@ -42,7 +42,7 @@
       &:before{
         background: $is_active_color;
       }
-    } 
+    }
   }
   .top-search {
     .el-input__inner{
@@ -75,7 +75,7 @@
     }
   }
   .avue-top{
-   
+
     .el-menu-item {
         i,
         span {

@@ -24,7 +24,7 @@ export default {
     fullscren: true,
     theme: true,
     menu: true,
-    color: true
+    color: false
   },
   fistPage: {
     label: "首页",

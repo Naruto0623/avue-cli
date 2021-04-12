@@ -2,10 +2,14 @@
   <el-autocomplete class="top-search"
                    popper-class="my-autocomplete"
                    v-model="value"
+                   size="small"
                    :fetch-suggestions="querySearch"
                    :placeholder="$t('search')"
                    @select="handleSelect">
-
+    <el-select v-model="select" slot="prepend" placeholder="全部" style="width: 80px;">
+      <el-option label="全部" value="1"></el-option>
+      <el-option label="案件卷宗" value="2"></el-option>
+    </el-select>
     <template slot-scope="{ item }">
       <i :class="[item[iconKey],'icon']"></i>
       <div class="name">{{ item[labelKey] }}</div>
@@ -20,6 +24,7 @@ import { mapGetters } from "vuex";
 export default {
   data () {
     return {
+      select: '1',
       config: config,
       value: "",
       menuList: []

@@ -12,7 +12,7 @@
         <logo />
         <sidebar />
       </div>
-      <div class="avue-main">
+      <div class="avue-main" style="background-color: #0070D2">
         <!-- 顶部标签卡 -->
         <tags />
         <transition name="fade-scale">

@@ -9,10 +9,10 @@
       </div>
     </div>
     <div class="top-bar__title">
-      <div class="top-bar__item top-bar__item--show"
+      <!--<div class="top-bar__item top-bar__item&#45;&#45;show"
            v-if="setting.menu">
         <top-menu ref="topMenu"></top-menu>
-      </div>
+      </div>-->
       <span class="top-bar__item"
             v-if="setting.search">
         <top-search></top-search>
@@ -76,10 +76,10 @@
       </el-tooltip>
       <img class="top-bar__img"
            :src="userInfo.avatar">
-      <el-dropdown>
+      <!--<el-dropdown>
         <span class="el-dropdown-link">
           {{userInfo.username}}
-          <i class="el-icon-arrow-down el-icon--right"></i>
+          <i class="el-icon-arrow-down el-icon&#45;&#45;right"></i>
         </span>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item>
@@ -94,7 +94,7 @@
           <el-dropdown-item @click.native="logout"
                             divided>{{$t('navbar.logOut')}}</el-dropdown-item>
         </el-dropdown-menu>
-      </el-dropdown>
+      </el-dropdown>-->
     </div>
   </div>
 </template>

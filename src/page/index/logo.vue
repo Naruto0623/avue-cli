@@ -10,7 +10,7 @@
     <transition-group name="fade">
       <template v-if="!keyCollapse">
         <div class="avue-logo_title" key="1">
-          <img src="../../../public/img/logo.png" height="45px" width="auto"/>
+          <!--<img src="../../../public/img/logo.png" height="45px" width="auto"/>-->
           <span style="padding: 0 15px">{{website.indexTitle}}</span>
         </div>
       </template>
@@ -45,8 +45,8 @@ export default {
   opacity: 0;
 }
 .avue-logo {
-  height: 64px;
-  line-height: 64px;
+  height: 40px;
+  line-height: 40px;
   background-color: #20222a;
   font-size: 20px;
   overflow: hidden;
@@ -58,7 +58,7 @@ export default {
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-weight: 300;
+    /*font-weight: 300;*/
     font-size: 20px;
   }
   &_subtitle {

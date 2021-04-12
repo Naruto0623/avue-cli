@@ -108,7 +108,7 @@ export default {
     border-bottom: 1px solid #eee;
   }
   &__title {
-    font-size: 20px;
+    font-size: 18px;
     color: rgba(0, 0, 0, 0.85);
     line-height: 28px;
     font-weight: 500;

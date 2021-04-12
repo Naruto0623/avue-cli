@@ -5,7 +5,7 @@
                     :index="item[pathKey]+''"
                     @click="open(item)"
                     :key="item[labelKey]">
-        <i :class="item[iconKey]"></i>
+        <!--<i :class="item[iconKey]"></i>-->
         <span slot="title"
               :alt="item[pathKey]">{{generateTitle(item)}}</span>
       </el-menu-item>
@@ -13,7 +13,7 @@
                   :index="item[pathKey]+''"
                   :key="item[labelKey]">
         <template slot="title">
-          <i :class="item[iconKey]"></i>
+          <!--<i :class="item[iconKey]"></i>-->
           <span slot="title"
                 :class="{'el-menu--display':collapse && first}">{{generateTitle(item)}}</span>
         </template>
@@ -22,7 +22,7 @@
                         @click="open(child)"
                         v-if="validatenull(child[childrenKey])"
                         :key="child[labelKey]">
-            <i :class="child[iconKey]"></i>
+            <!--<i :class="child[iconKey]"></i>-->
             <span slot="title">{{generateTitle(child)}}</span>
           </el-menu-item>
           <sidebar-item v-else
@@ -79,7 +79,7 @@ export default {
       return this.props.path || this.config.propsDefault.path;
     },
     iconKey () {
-      return this.props.icon || this.config.propsDefault.icon;
+      // return this.props.icon || this.config.propsDefault.icon;
     },
     childrenKey () {
       return this.props.children || this.config.propsDefault.children;

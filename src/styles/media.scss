@@ -14,17 +14,17 @@
     flex-direction: column;
     .avue-sidebar {
       width: 100%;
-      height: 64px;
+      height: 45px;
       display: flex;
       .el-menu-item.is-active:before,.el-submenu__title.is-active:before{
         width: 100%;
         height: 4px;
-        top:inherit;
-        bottom:0;
+        top:0;
+        bottom:inherit;
       }
     }
     .avue-menu{
-      width: calc(100% - 240px);
+      width: calc(100% - 120px);
       height: 100%;
     }
     .el-menu--horizontal,.menu-wrapper,.el-menu-item{
@@ -34,7 +34,7 @@
       display: flex;
     }
     .avue-logo{
-      width: 240px;
+      width: 120px;
     }
   }
 }
@@ -51,12 +51,12 @@
 
 
 .avue-sidebar {
-    width: 240px;
+    width: 120px;
     height: 100%;
 }
 
 .avue-menu{
-  height: calc(100% - 64px);
+  height: calc(100% - 40px);
 }
 .avue--collapse {
     .avue-sidebar,
@@ -94,9 +94,9 @@
 
 
 .turn{
-  animation:turn 1s linear infinite;     
+  animation:turn 1s linear infinite;
 }
-/* 
+/*
   turn : 定义的动画名称
   1s : 动画时间
   linear : 动画以何种运行轨迹完成一个周期
@@ -110,7 +110,7 @@
   100%{-webkit-transform:rotate(360deg);}
 }
 @media screen and (max-width: 992px) {
-    $width: 240px;
+    $width: 120px;
     .avue-sidebar{
       position: fixed;
       top:0;
@@ -121,13 +121,13 @@
       .avue-sidebar{
         left:0;
         width: $width;
-      }   
+      }
       .avue-logo{
         width: $width;
       }
       .avue-main{
         margin-left:$width;
-      }  
+      }
     }
     // ele的自适应
     .el-dialog,
