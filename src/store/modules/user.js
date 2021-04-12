@@ -155,13 +155,21 @@ const user = {
             //   meta: { i18n: "table" },
             //   path: "/table",
             // },
+            // {
+            //   children: [],
+            //   component: "views/pages/smartCatalog/smartCatalog",
+            //   icon: "el-icon-tickets",
+            //   label: "智能编目",
+            //   meta: { i18n: "smartCatalog" },
+            //   path: "/smartCatalog",
+            // },
             {
               children: [],
-              component: "views/pages/smartCatalog/smartCatalog",
-              icon: "el-icon-tickets",
-              label: "智能编目",
-              meta: { i18n: "smartCatalog" },
-              path: "/smartCatalog",
+              component: "views/pages/casesList/casesList",
+              icon: "el-icon-news",
+              label: "案件列表",
+              meta: { i18n: "casesList" },
+              path: "/casesList",
             },
             {
               children: [],
@@ -171,14 +179,6 @@ const user = {
               meta: { i18n: "casesCard" },
               path: "/casesCard",
             },
-            {
-              children: [],
-              component: "views/pages/casesList/casesList",
-              icon: "el-icon-news",
-              label: "案件列表",
-              meta: { i18n: "casesList" },
-              path: "/casesList",
-            }
           ];
           menu.forEach(ele => {
             addPath(ele, true);

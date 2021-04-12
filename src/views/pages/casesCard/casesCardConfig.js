@@ -59,6 +59,9 @@ export default {
       {
         type: 'input',
         label: '案件名称',
+        // tip: '这是信息提示',
+        suffixIcon: 'el-icon-view',
+        // prefixIcon: 'el-icon-tickets',
         span: 24,
         display: true,
         prop: 'name',
@@ -74,9 +77,10 @@ export default {
       {
         type: 'input',
         label: '移诉罪民',
+        suffixIcon: 'el-icon-view',
         span: 24,
         display: true,
-        prop: '1617705836685_617',
+        prop: 'name1',
         required: null,
         rules: [
           {
@@ -88,9 +92,10 @@ export default {
       {
         type: 'input',
         label: '侦（调）查机关',
+        suffixIcon: 'el-icon-view',
         span: 24,
         display: true,
-        prop: '1617706135046_79564',
+        prop: 'name2',
         rules: [
           {
             required: null,
@@ -104,9 +109,10 @@ export default {
       {
         type: 'input',
         label: '侦（调）查机关类别',
+        suffixIcon: 'el-icon-view',
         span: 24,
         display: true,
-        prop: '1617706249044_87082',
+        prop: 'name3',
         rules: [
           {
             required: null,
@@ -118,9 +124,10 @@ export default {
       {
         type: 'input',
         label: '侦（调）查机关案号',
+        suffixIcon: 'el-icon-view',
         span: 24,
         display: true,
-        prop: '1617706295573_50040',
+        prop: 'name4',
         showWordLimit: true,
         required: null,
         rules: [
@@ -135,7 +142,7 @@ export default {
         label: '移送单位',
         span: 24,
         display: true,
-        prop: '1617706335218_58377',
+        prop: 'name5',
         rules: [
           {
             required: null,
@@ -163,7 +170,7 @@ export default {
           label: 'label',
           value: 'value'
         },
-        prop: '1617706388365_78347'
+        prop: 'name6'
       },
       {
         type: 'radio',
@@ -184,7 +191,7 @@ export default {
           label: 'label',
           value: 'value'
         },
-        prop: '1617706426743_46780'
+        prop: 'name7'
       },
       {
         type: 'radio',
@@ -205,24 +212,25 @@ export default {
           label: 'label',
           value: 'value'
         },
-        prop: '1617706474422_69984'
+        prop: 'name8'
       },
       {
         type: 'input',
         label: '案件特性',
         span: 24,
         display: true,
-        prop: '1617706516912_470'
+        prop: 'name9'
       },
       {
         type: 'input',
         label: '卷宗册数',
         span: 24,
         display: true,
-        prop: '1617706530510_12873'
+        suffixIcon: 'el-icon-view',
+        prop: 'name10'
       }
     ],
-    labelPosition: 'right',
+    labelPosition: 'top',
     labelSuffix: '：',
     labelWidth: 170,
     gutter: 0,
@@ -591,7 +599,7 @@ export default {
         prop: '1617791886682_78065'
       }
     ],
-    labelPosition: 'right',
+    labelPosition: 'top',
     labelSuffix: '：',
     labelWidth: 180,
     gutter: 0,

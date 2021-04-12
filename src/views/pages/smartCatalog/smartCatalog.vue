@@ -242,7 +242,7 @@
   }
 </script>
 
-<style>
+<!--<style>
   .smartCatalog {
     background-color: #fff;
     padding: 10px;
@@ -303,4 +303,4 @@
     flex-direction: row;
     width: 100%;
   }
-</style>
+</style>-->

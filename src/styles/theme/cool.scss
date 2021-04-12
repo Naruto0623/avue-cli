@@ -16,12 +16,64 @@
   padding: 4px 8px !important;
 }
 
+.el-table-column--selection {
+  border-right: none !important;
+  padding: 4px 8px !important;
+}
+
 .el-button.is-circle {
   border-radius: 5px !important;
 }
 
 .avue-crud__tip {
   display: none !important;
+}
+
+.el-form--label-top .el-form-item__label {
+  padding: 0 !important;
+  font-size: 10px !important;
+  line-height: 22px !important;
+}
+
+.el-collapse-item__header {
+  font-weight: 800;
+}
+
+.el-card__header {
+  padding: 10px !important;
+  color: #1B5E9C;
+  font-weight: 800;
+}
+
+.el-checkbox {
+  display: block !important;
+}
+
+.el-card__body {
+  padding: 12px 16px !important;
+}
+
+.el-collapse {
+  border: none !important;
+}
+
+.el-collapse-item__arrow {
+  margin: 0 auto 0 8px;
+  color: #706E6B;
+}
+
+.el-collapse-item__header {
+  height: 40px !important;
+  padding: 0 8px;
+  border-radius: 6px;
+  border: none !important;
+  margin-bottom: 10px;
+  background-color: #f3f2f2;
+}
+
+.el-card__header {
+  background-color: #f3f2f2 !important;
+  color: #080707 !important;
 }
 
 .theme-cool {

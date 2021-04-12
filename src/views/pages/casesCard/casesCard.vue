@@ -1,6 +1,6 @@
 <template>
   <div class="casesCard">
-    <el-container style="height: 800px;background-color: #eee;position: relative;">
+    <el-container style="height: 865px;position: relative;">
       <!-- 折叠阅卷 -->
       <transition name="custom-classes-transition"
                   enter-active-class="animated bounceInUp">
@@ -11,12 +11,12 @@
       <!-- 左侧预览 -->
       <transition name="custom-classes-transition"
                   enter-active-class="animated bounceInLeft">
-        <el-container v-show="isShowBook" style="position: relative;justify-content: center;">
+        <el-container v-show="isShowBook" style="position: relative;justify-content: center;margin-right: 10px;">
           <div class="left-text" v-if="!isShowBook">
             <span class="text-tag">电 子 卷 宗</span>
           </div>
           <div style="display: flex;flex-direction: column;height: 100%;width: 100%;">
-            <el-header class="header-box">
+            <el-header class="header-box" style="height: 42px;">
               <span>电子卷宗</span>
               <span style="flex: 1"></span>
               <span @click="hideBook"><i style="font-size: 16px;" class="el-icon-d-arrow-left"></i></span>
@@ -25,18 +25,10 @@
               <div class="read-box" id="box">
                 <!-- 卷宗预览 -->
                 <div class="read" @click="isShowDrawer = false">
-                  <img src="../../../../public/img/demo.png" id="img1"
-                       height="auto" width="850px" style="margin-top: 10px;"/>
-                  <img src="../../../../public/img/demo.png" id="img2"
-                       height="auto" width="850px" style="margin-top: 10px;"/>
-                  <img src="../../../../public/img/demo.png" id="img3"
-                       height="auto" width="850px" style="margin-top: 10px;"/>
-                  <img src="../../../../public/img/demo.png" id="img4"
-                       height="auto" width="850px" style="margin-top: 10px;"/>
-                  <img src="../../../../public/img/demo.png" id="img5"
-                       height="auto" width="850px" style="margin-top: 10px;"/>
-                  <img src="../../../../public/img/demo.png" id="img6"
-                       height="auto" width="850px" style="margin-top: 10px;"/>
+                  <img v-for="(item,index) in 6"
+                       src="../../../../public/img/demo.png" alt="预览"
+                       height="auto" width="900px"
+                       :id="'img' + (index + 1)">
                 </div>
                 <!-- 阅卷工具条 -->
                 <div class="toods-read" draggable>
@@ -82,10 +74,13 @@
       <transition name="custom-classes-transition"
                   enter-active-class="animated bounceInUp">
       </transition>
-      <el-aside :width="rightWidth" style="margin-right: 5px;background-color: #fff;padding: 10px;">
+      <el-aside :width="rightWidth" style="background-color: transparent;border-radius: 6px;">
         <el-card v-if="!isNext" class="box-card">
           <div slot="header" class="clearfix">
             <span>提取受理信息</span>
+            <span style="margin: 0 8px 0 auto;float: right">
+              <i style="font-size: 16px;" class="el-icon-d-arrow-right"></i>
+            </span>
           </div>
           <div>
             <el-collapse v-model="activeNames">
@@ -105,7 +100,7 @@
                 </el-tree>
               </el-collapse-item>
               <el-collapse-item name="2" title="一审公诉（刑检）受理信息">
-                <avue-form ref="form0" v-model="form1"
+                <avue-form ref="form0" v-model="form0"
                            :option="configData.option1"
                            :status-icon="true"
                            @reset-change="emptytChange"
@@ -120,7 +115,7 @@
           <el-tabs v-model="activeName" @tab-click="handleClick">
             <el-tab-pane label="案卡" name="1">
               <el-row>
-                <el-col :span="6">
+                <el-col :span="leftSpan">
                   <el-tree :data="configData.cardLogData"
                            @node-click="chooseTree"
                            node-key="id"
@@ -128,11 +123,15 @@
                            :props="defaultProps">
                   </el-tree>
                 </el-col>
-                <el-col :span="18">
+                <el-col :span="rightSpan" style="border-left: 2px solid #B0C4DF;">
                   <el-card class="box-card">
-                    <div slot="header" class="clearfix">
+                    <div slot="header" class="clearfix" style="background-color: #f3f2f2">
                       <span>{{ title }}</span>
                     </div>
+                    <el-row>
+                      <el-radio v-model="radio" label="1">全选是</el-radio>
+                      <el-radio v-model="radio" label="2">全选否</el-radio>
+                    </el-row>
                     <el-tabs v-model="activeCard" @tab-click="handleClick">
                       <el-tab-pane label="基本信息" name="10">
                         <avue-form ref="form" v-model="form1" :option="configData.option2" @reset-change="emptytChange" @submit="submit"></avue-form>
@@ -145,7 +144,7 @@
                 </el-col>
               </el-row>
             </el-tab-pane>
-            <el-tab-pane label="在办文书" name="2">在办文书</el-tab-pane>
+            <!--<el-tab-pane label="在办文书" name="2">在办文书</el-tab-pane>-->
           </el-tabs>
         </el-card>
       </el-aside>
@@ -168,11 +167,29 @@
     data(){
       return {
         configData,
+        radio: '1',
+        form0: {
+          name: this.$route.query.name,
+          name1: '非法经营罪',
+          name2: '武清分局',
+          name3: '公安局',
+          name4: '津武公10122号',
+          name5: '',
+          name6: '',
+          name7: '',
+          name8: '',
+          name9: '',
+          name10: '3',
+        },
         title: '审查起诉案件信息',
         activeName: '1',
         activeCard: '10',
         // 右侧表单宽度
         rightWidth: '800px',
+        // 下一步案卡左侧
+        leftSpan: 3,
+        // 下一步案卡右侧
+        rightSpan: 21,
         isShowBook: true,
         // 当前是否显示下一步的内容
         isNext: false,
@@ -195,15 +212,19 @@
       // 隐藏显示预览页面
       hideBook( type ){
         this.isShowBook = !this.isShowBook;
-        this.rightWidth = type == 1? '800px': '100%';
+        this.rightWidth = type == 1? '800px': '98%';
         if (type == 1) {
           this.configData.option2.column.forEach(ele => {
             ele.span = 24
-          })
+          });
+          this.leftSpan = 6;
+          this.rightSpan = 18;
         } else {
           this.configData.option2.column.forEach(ele => {
             ele.span = 12
-          })
+          });
+          this.leftSpan = 3;
+          this.rightSpan = 21;
         }
       },
       openDrawer(){
@@ -216,10 +237,16 @@
         this.isNext = true;
         this.hideBook();
       },
-      alertMessage() {
-        console.log(this.$refs.form0.getPropRef('name').$parent);
-        this.$refs.form0.getPropRef('name').$parent.validateState = 'error';
-        this.$refs.form0.getPropRef('name').$parent.validateMessage = '请您核对以上信息';
+      // 加载标红的字段
+      alertMessage( form, fieldList ){
+        fieldList.forEach(ele => {
+          this.$refs.[ form ].getPropRef(ele).$parent.validateState = 'error';
+          this.$refs.[ form ].getPropRef(ele).$parent.validateMessage = '请您核对以上信息';
+        });
+        this.$refs.form0.getPropRef('name2').$parent.validateState = 'error';
+        this.$refs.form0.getPropRef('name4').$parent.validateState = 'error';
+        this.$refs.form0.getPropRef('name4').$parent.validateMessage = '请您核对以上信息';
+        this.$refs.form0.getPropRef('name2').$parent.validateMessage = '请您核对以上信息';
       },
       // 案卡书点击
       chooseTree( e ){
@@ -227,11 +254,7 @@
       },
       // 点击树节点跳转
       nodeClick( e ){
-        if (e.label == "葛某某危险驾驶案-一审公诉案件（共14页）") {
-          this.isHideBaseInfo = true;
-        } else {
-          this.isHideBaseInfo = false;
-        }
+        this.openDrawer();
         let toId = '#' + configData.nodeId[ e.id ] || 'img6';
         let boxDom = document.getElementById('box');
         boxDom.querySelector(toId).scrollIntoView(true);
@@ -244,36 +267,44 @@
       },
     },
     mounted(){
-      setTimeout(() => this.alertMessage(), 2000)
+      let errorField = ['name2', 'name4',];
+      setTimeout(() => this.alertMessage('form0', errorField), 2000)
     }
   }
 </script>
 
 <style>
   .casesCard {
-    background-color: #1B5E9C;
+    /*background-color: #1B5E9C;*/
     padding: 10px;
   }
 
   .header-box {
     display: flex;
-    line-height: 60px;
+    line-height: 42px;
+    width: 99.3%;
     font-size: 16px;
-    color: #1B5E9C;
+    /*color: #1B5E9C;*/
     font-weight: 800;
-    background-color: #fff;
-    border-right: 5px solid #1B5E9C;
+    border-radius: 6px 6px 0 0;
+    background-color: #f3f2f2;
   }
 
   .left-text {
+    border-radius: 6px;
     writing-mode: vertical-lr;
-    width: 30px;
+    width: 40px;
     background-color: #fff;
-    margin-right: 5px;
-    line-height: 30px;
+    margin-right: 10px;
+    line-height: 40px;
     padding: 20px 0;
     color: #1B5E9C;
     font-weight: 800;
+  }
+
+  .el-input__suffix-inner {
+    /*color: #67c23a;*/
+    font-size: 18px;
   }
 
   .el-col {
@@ -286,12 +317,18 @@
     cursor: pointer;
   }
 
+  .el-form--label-top .el-form-item__label {
+    padding: 0 !important;
+    font-size: 10px !important;
+    line-height: 22px !important;
+  }
+
   .el-collapse-item__header {
     font-weight: 800;
   }
 
   .el-card__header {
-    padding: 5px !important;
+    padding: 10px !important;
     color: #1B5E9C;
     font-weight: 800;
   }
@@ -300,12 +337,31 @@
     display: block !important;
   }
 
+  .el-card__body {
+    padding: 12px 16px !important;
+  }
+
+  .el-collapse {
+    border: none !important;
+  }
+
+  .el-collapse-item__arrow {
+    margin: 0 auto 0 8px;
+    color: #706E6B;
+  }
+
   .el-collapse-item__header {
     height: 40px !important;
+    padding: 0 8px;
+    border-radius: 6px;
+    border: none !important;
+    margin-bottom: 10px;
+    background-color: #f3f2f2;
   }
 
   .read-box {
-    background-color: #eee;
+    background-color: #fff;
+    border-radius: 0 0 6px 6px;
     /*height: 100%;*/
     overflow-y: auto;
   }
@@ -319,14 +375,14 @@
 
   .logs {
     width: 350px;
-    height: 780px;
+    height: 845px;
     overflow-y: auto;
     background-color: #fff;
     padding: 10px;
     position: absolute;
     top: 0;
     left: 0;
-    border-radius: 5px;
+    border-radius: 6px;
     -webkit-box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 0.3);
     box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 0.3);
   }
@@ -336,13 +392,13 @@
     height: 270px;
     padding: 5px;
     background-color: #1b5e9c;
-    border-radius: 5px;
+    border-radius: 6px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: absolute;
-    right: 0;
+    right: 7px;
     top: 35%;
   }
 
