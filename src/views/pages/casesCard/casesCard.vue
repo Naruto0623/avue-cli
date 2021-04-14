@@ -71,9 +71,6 @@
         </el-container>
       </transition>
       <!-- 右侧表单 -->
-      <transition name="custom-classes-transition"
-                  enter-active-class="animated bounceInUp">
-      </transition>
       <el-aside :width="rightWidth" style="background-color: transparent;border-radius: 6px;">
         <el-card v-if="!isNext" class="box-card">
           <div slot="header" class="clearfix">
@@ -193,7 +190,7 @@
         isShowBook: true,
         // 当前是否显示下一步的内容
         isNext: false,
-        isShowDrawer: false,
+        isShowDrawer: true,
         form1: {},
         // 折叠面板展开项
         activeNames: ['1', '2'],
@@ -221,7 +218,7 @@
           this.rightSpan = 18;
         } else {
           this.configData.option2.column.forEach(ele => {
-            ele.span = 12
+            ele.span = 8
           });
           this.leftSpan = 3;
           this.rightSpan = 21;
@@ -240,8 +237,8 @@
       // 加载标红的字段
       alertMessage( form, fieldList ){
         fieldList.forEach(ele => {
-          this.$refs.[ form ].getPropRef(ele).$parent.validateState = 'error';
-          this.$refs.[ form ].getPropRef(ele).$parent.validateMessage = '请您核对以上信息';
+          this.$refs[ form ].getPropRef(ele).$parent.validateState = 'error';
+          this.$refs[ form ].getPropRef(ele).$parent.validateMessage = '请您核对以上信息';
         });
         this.$refs.form0.getPropRef('name2').$parent.validateState = 'error';
         this.$refs.form0.getPropRef('name4').$parent.validateState = 'error';
@@ -268,7 +265,7 @@
     },
     mounted(){
       let errorField = ['name2', 'name4',];
-      setTimeout(() => this.alertMessage('form0', errorField), 2000)
+      // setTimeout(() => this.alertMessage('form0', errorField), 2000)
     }
   }
 </script>
@@ -303,8 +300,12 @@
   }
 
   .el-input__suffix-inner {
-    /*color: #67c23a;*/
-    font-size: 18px;
+    color: #67c23a;
+    font-size: 24px !important;
+  }
+
+  .icon {
+    font-size: 40px !important;
   }
 
   .el-col {

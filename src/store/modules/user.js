@@ -171,14 +171,14 @@ const user = {
               meta: { i18n: "casesList" },
               path: "/casesList",
             },
-            {
-              children: [],
-              component: "views/pages/casesCard/casesCard",
-              icon: "el-icon-news",
-              label: "案卡回填",
-              meta: { i18n: "casesCard" },
-              path: "/casesCard",
-            },
+            // {
+            //   children: [],
+            //   component: "views/pages/casesCard/casesCard",
+            //   icon: "el-icon-news",
+            //   label: "智能编目",
+            //   meta: { i18n: "casesCard" },
+            //   path: "/casesCard",
+            // },
           ];
           menu.forEach(ele => {
             addPath(ele, true);

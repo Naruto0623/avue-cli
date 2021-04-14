@@ -60,7 +60,7 @@ export default {
         type: 'input',
         label: '案件名称',
         // tip: '这是信息提示',
-        suffixIcon: 'el-icon-view',
+        suffixIcon: 'iconfont icon-OCR7',
         // prefixIcon: 'el-icon-tickets',
         span: 24,
         display: true,

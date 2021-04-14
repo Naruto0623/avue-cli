@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-tabs @tab-click="handleClick" value="目录">
+    <el-tabs @tab-click="handleClick" type="border-card" value="目录">
       <el-tab-pane label="目录" name="目录" key="目录">
         <el-input v-model="filterText"
                   style="margin-bottom: 10px;"

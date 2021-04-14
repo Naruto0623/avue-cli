@@ -21,13 +21,10 @@
               <i class="el-icon-caret-bottom"></i>
             </span>
             <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item>接收</el-dropdown-item>
-              <el-dropdown-item>退回</el-dropdown-item>
+              <el-dropdown-item @click.native="receive">查看卷宗</el-dropdown-item>
+              <!--<el-dropdown-item @click.native="cancel">退回</el-dropdown-item>-->
             </el-dropdown-menu>
           </el-dropdown>
-
-          <!--<el-button style="margin-left:10px;" size="small" type="text" icon="el-icon-receiving" @click.native="receive">接收</el-button>
-          <el-button style="margin-left:10px;" size="small" type="text" icon="el-icon-receiving" @click.native="receive">退回</el-button>-->
         </template>
       </avue-crud>
     </el-card>
@@ -54,6 +51,18 @@
       // 案件接收
       receive( row ){
         this.handleRowClick(row);
+      },
+      // 案件退回
+      cancel(){
+        this.$prompt('请输入退回原因', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+        }).then(() => {
+          this.$message({
+            type: 'success',
+            message: '操作成功'
+          });
+        })
       },
       // 案件详情跳转
       handleRowClick( row, event, column ){
