@@ -24,16 +24,16 @@ export default {
     fullscren: true,
     theme: true,
     menu: true,
-    color: false
+    color: true
   },
   fistPage: {
     label: "首页",
-    value: "/wel/index",
+    value: "/home/index",
     // value: "/smartCatalog",
     params: {},
     query: {},
     meta: {
-      i18n: 'dashboard'
+      i18n: 'home'
     },
     group: [],
     close: false

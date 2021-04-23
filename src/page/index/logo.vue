@@ -1,5 +1,5 @@
 <template>
-  <div class="avue-logo">
+  <div class="avue-logo" style="display: flex;justify-content: center;align-items: center;margin-left: 10px;">
     <transition name="fade">
       <span v-if="keyCollapse"
             class="avue-logo_subtitle"
@@ -9,9 +9,10 @@
     </transition>
     <transition-group name="fade">
       <template v-if="!keyCollapse">
-        <div class="avue-logo_title" key="1">
+        <div class="avue-logo_title" key="1" >
           <!--<img src="../../../public/img/logo.png" height="45px" width="auto"/>-->
-          <span style="padding: 0 15px">{{website.indexTitle}}</span>
+          <i style="padding: 0 15px;font-size: 24px;color: #706e6b;" class="el-icon-s-grid"></i>
+          <!--<span style="padding: 0 15px">{{website.indexTitle}}</span>-->
         </div>
       </template>
     </transition-group>

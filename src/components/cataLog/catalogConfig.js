@@ -1,5 +1,5 @@
 export default {
-  tabData: ['全部', '起诉意见书', '证据', '犯罪嫌疑人'],
+  tabData: ['全部', '起诉意见书', '证据卷', '犯罪嫌疑人'],
   // 树节点
   treeData: {
     '全部': [
@@ -94,7 +94,7 @@ export default {
           },
           {
             id: 3,
-            label: '证据材料卷（共5页）',
+            label: '证据卷（共5页）',
             icon: '',
             indexNum: 1,
             isTitle: true,
@@ -130,14 +130,71 @@ export default {
                     icon: '',
                     indexNum: 12,
                   },
-                  {
-                    id: 81,
-                    label: '部库信息查询',
-                    icon: '',
-                    indexNum: 1,
-                  }
                 ]
-              }
+              },
+              {
+                id: 31,
+                label: '物证',
+                icon: '',
+                indexNum: 1,
+                isTitle: true,
+                children: [
+                  {
+                    id: 71,
+                    label: '物证清单',
+                    icon: '',
+                    indexNum: 11,
+                  },
+                  {
+                    id: 80,
+                    label: '物证图片',
+                    icon: '',
+                    indexNum: 12,
+                  },
+                ]
+              },
+              {
+                id: 31,
+                label: '书证',
+                icon: '',
+                indexNum: 1,
+                isTitle: true,
+                children: [
+                  {
+                    id: 71,
+                    label: '书证一',
+                    icon: '',
+                    indexNum: 11,
+                  },
+                  {
+                    id: 80,
+                    label: '书证二',
+                    icon: '',
+                    indexNum: 12,
+                  },
+                ]
+              },
+              {
+                id: 31,
+                label: '证人证言',
+                icon: '',
+                indexNum: 1,
+                isTitle: true,
+                children: [
+                  {
+                    id: 71,
+                    label: '王二证言',
+                    icon: '',
+                    indexNum: 11,
+                  },
+                  {
+                    id: 80,
+                    label: '李三证言',
+                    icon: '',
+                    indexNum: 12,
+                  },
+                ]
+              },
             ]
           },
           /*{
@@ -189,57 +246,19 @@ export default {
         children: []
       }
     ],
-    '证据': [
+    '证据卷': [
       {
-        id: 3,
-        label: '证据材料卷（共5页）',
+        id: 7,
+        label: '封面',
         icon: '',
-        indexNum: 1,
-        isTitle: true,
-        children: [
-          {
-            id: 7,
-            label: '封面',
-            icon: '',
-            indexNum: 9,
-          },
-          {
-            id: 8,
-            label: '目录',
-            icon: '',
-            indexNum: 10,
-          },
-          {
-            id: 31,
-            label: '犯罪嫌疑人基本情况（共3页）',
-            icon: '',
-            indexNum: 1,
-            isTitle: true,
-            children: [
-              {
-                id: 71,
-                label: '嫌疑人基本信息',
-                icon: '',
-                indexNum: 11,
-              },
-              {
-                id: 80,
-                label: '户籍证明',
-                icon: '',
-                indexNum: 12,
-              },
-              {
-                id: 81,
-                label: '部库信息查询',
-                icon: '',
-                indexNum: 1,
-              }
-            ]
-          }
-        ]
+        indexNum: 9,
       },
-    ],
-    '判决书': [
+      {
+        id: 8,
+        label: '目录',
+        icon: '',
+        indexNum: 10,
+      },
       {
         id: 31,
         label: '犯罪嫌疑人基本情况（共3页）',
@@ -259,15 +278,72 @@ export default {
             icon: '',
             indexNum: 12,
           },
-          {
-            id: 81,
-            label: '部库信息查询',
-            icon: '',
-            indexNum: 1,
-          }
         ]
-      }
-    ]
+      },
+      {
+        id: 31,
+        label: '物证',
+        icon: '',
+        indexNum: 1,
+        isTitle: true,
+        children: [
+          {
+            id: 71,
+            label: '物证清单',
+            icon: '',
+            indexNum: 11,
+          },
+          {
+            id: 80,
+            label: '物证图片',
+            icon: '',
+            indexNum: 12,
+          },
+        ]
+      },
+      {
+        id: 31,
+        label: '书证',
+        icon: '',
+        indexNum: 1,
+        isTitle: true,
+        children: [
+          {
+            id: 71,
+            label: '书证一',
+            icon: '',
+            indexNum: 11,
+          },
+          {
+            id: 80,
+            label: '书证二',
+            icon: '',
+            indexNum: 12,
+          },
+        ]
+      },
+      {
+        id: 31,
+        label: '证人证言',
+        icon: '',
+        indexNum: 1,
+        isTitle: true,
+        children: [
+          {
+            id: 71,
+            label: '王二证言',
+            icon: '',
+            indexNum: 11,
+          },
+          {
+            id: 80,
+            label: '李三证言',
+            icon: '',
+            indexNum: 12,
+          },
+        ]
+      },
+    ],
   },
   // 表头
   columnData: [
@@ -313,4 +389,22 @@ export default {
     describe: `犯罪嫌疑人张三在XXX公司担任团队经理时，带领团队非法吸收公众存款，
   目前已有55名投资人报案，经济损失4500万余元，犯罪嫌疑人张三涉嫌非法吸收公众存款罪`
   },
+  // 书签
+  bookTagList: [
+    {
+      type: '起诉意见书',
+      title: '被告人蒋某某在天津市河东区某大厦',
+      page: '2页'
+    },
+    {
+      type: '起诉意见书',
+      title: '认定上述事实的证据如下，1、物证：手机',
+      page: '2页'
+    },
+    {
+      type: '物证卷',
+      title: '一氧化氮，手机等',
+      page: '2页'
+    }
+  ]
 }

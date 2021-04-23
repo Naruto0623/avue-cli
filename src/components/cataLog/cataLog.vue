@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-tabs @tab-click="handleClick" type="border-card" value="目录">
+    <el-tabs @tab-click="handleClick" type="border-card" value="目录" style="min-height: 800px;">
       <el-tab-pane label="目录" name="目录" key="目录">
         <el-input v-model="filterText"
                   style="margin-bottom: 10px;"
@@ -18,15 +18,53 @@
                        :props="defaultProps"
                        highlight-current
                        :filter-node-method="filterNode"
-                       :render-content="renderContent"
                        :ref="item">
+
+                <div class="custom-tree-node" slot-scope="{ node, data }">
+                  <p>
+                    <i :class="node.data.icon || 'el-icon-document'" :style="node.data.style"></i>
+                  </p>
+                  <p class="tree-node">
+                    {{ node.data.label }}
+                  </p>
+                  <p style="flex: 1"></p>
+                  <p v-if="!node.data.isTitle">{{ node.data.indexNum }} 页</p>
+                  <!--<p>
+                    <i class="el-icon-edit"></i>
+                  </p>-->
+                </div>
+
+                <!--<span class="custom-tree-node" slot-scope="{ node, data }">
+                  <span>{{ node.label }}</span>
+                  <span>
+                    <el-button
+                      type="text"
+                      size="mini"
+                      @click="() => append(data)">
+                      Append
+                    </el-button>
+                    <el-button
+                      type="text"
+                      size="mini"
+                      @click="() => remove(node, data)">
+                      Delete
+                    </el-button>
+                  </span>
+                </span>-->
+
               </el-tree>
             </el-tab-pane>
           </template>
         </el-tabs>
       </el-tab-pane>
       <el-tab-pane label="书签" name="书签" key="书签">
-
+        <div>
+          <div v-for="item in configData.bookTagList" :key="item" class="tag-box" @click="nodeClick({})">
+            <p>{{ item.type }}：</p>
+            <p style="flex: 1;overflow: hidden;text-overflow: ellipsis;white-space:nowrap">{{ item.title }}</p>
+            <p>{{ item.page }}</p>
+          </div>
+        </div>
       </el-tab-pane>
     </el-tabs>
   </div>
@@ -37,7 +75,7 @@
 
   export default {
     name: "cataLog",
-    data() {
+    data(){
       return {
         configData,
         defaultProps: {
@@ -63,49 +101,39 @@
 
       },
       // 切换目录类型
-      typeHandleClick(e){
+      typeHandleClick( e ){
         this.$emit('typeHandleClick', e)
       },
       // 树节点点击
-      nodeClick(e) {
+      nodeClick( e ){
         this.$emit('nodeClick', e);
-      },
-      // 树节点自定义渲染
-      renderContent( h, { node, data, store } ){
-        return (
-          < div
-      class
-        = "custom-tree-node" >
-          < p >
-          < i
-      class
-        = { node.data.icon || 'el-icon-document' }
-        style = { node.data.style } > < /i>
-          < /p>
-          < p
-      class
-        = "tree-node" >
-          { node.data.label }
-          < /p>
-          < p
-        style = "flex: 1" >
-
-          < /p>
-        {
-          !node.data.isTitle && < p >
-          { node.data.indexNum }
-          页
-          < /p>
-        }
-      <
-        /div>
-
-      )
       },
     }
   }
 </script>
 
-<style scoped>
+<style>
+  p {
+    margin: 0;
+    padding: 0;
+  }
 
+  .tag-box:hover {
+    color: #409eff;
+  }
+
+  .tag-box {
+    display: flex;
+    cursor: pointer;
+    line-height: 2em;
+    color: #606266;
+  }
+
+  /*.el-tree-node {
+    margin-bottom: 5px !important;
+  }
+
+  .el-tree-node__content {
+    margin-bottom: 5px !important;
+  }*/
 </style>

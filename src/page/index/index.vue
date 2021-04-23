@@ -30,9 +30,9 @@
           <router-view class="avue-view"
                        v-if="!$route.meta.keepAlive && isRefresh"/>
         </div>
-        <div class="avue-footer">
+        <!--<div class="avue-footer">
           <p class="copyright">© 2018-2021 Avue designed by smallwei</p>
-        </div>
+        </div>-->
       </div>
     </div>
 

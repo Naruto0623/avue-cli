@@ -1,12 +1,14 @@
 <template>
   <div class="avue-top">
     <div class="top-bar__left">
-      <div class="avue-breadcrumb"
-           :class="[{ 'avue-breadcrumb--active': isCollapse }]"
+      <!--<div class="avue-breadcrumb"
+           :class="[{ 'avue-breadcrumb&#45;&#45;active': isCollapse }]"
            v-if="setting.collapse&&!isHorizontal">
         <i class="icon-navicon"
            @click="setCollapse"></i>
-      </div>
+      </div>-->
+      <img class="top-bar__img" src="../../../../public/img/logo.png"/>
+      <span style="margin-top: 5px"><b>天津市检察院智慧检察官</b></span>
     </div>
     <div class="top-bar__title">
       <!--<div class="top-bar__item top-bar__item&#45;&#45;show"

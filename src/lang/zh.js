@@ -75,6 +75,7 @@ export default {
     smartCatalog: '智能编目',
     casesCard: '智能编目',
     casesList: '案件列表',
+    home: '首页示例',
   },
   login: {
     title: '登录 ',

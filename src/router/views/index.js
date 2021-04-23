@@ -4,7 +4,7 @@ export default [
   {
     path: '/wel',
     component: Layout,
-    redirect: '/wel/index',
+    redirect: '/home/index',
     children: [
       {
         path: 'index',
@@ -13,7 +13,7 @@ export default [
           i18n: 'dashboard'
         },
         component: () =>
-          import( /* webpackChunkName: "views" */ '@/views/wel/index')
+          import( /* webpackChunkName: "views" */ '@/views/pages/home/home')
       },
       {
         path: 'dashboard',

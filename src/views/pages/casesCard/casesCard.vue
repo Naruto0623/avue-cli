@@ -9,70 +9,73 @@
         </div>
       </transition>
       <!-- 左侧预览 -->
-      <transition name="custom-classes-transition"
-                  enter-active-class="animated bounceInLeft">
-        <el-container v-show="isShowBook" style="position: relative;justify-content: center;margin-right: 10px;">
-          <div class="left-text" v-if="!isShowBook">
-            <span class="text-tag">电 子 卷 宗</span>
+      <!--<transition name="custom-classes-transition"
+                  enter-active-class="animated bounceInLeft">-->
+      <!-- 左侧卷宗目录 -->
+      <div v-show="isShowBook" style="margin-right: 10px;">
+        <transition name="custom-classes-transition"
+                    enter-active-class="animated bounceInLeft"
+                    leave-active-class="animated bounceOutLeft">
+          <div class="logs" v-show="isShowDrawer">
+            <cataLog @nodeClick="nodeClick" @typeHandleClick="typeHandleClick"/>
           </div>
-          <div style="display: flex;flex-direction: column;height: 100%;width: 100%;">
-            <el-header class="header-box" style="height: 42px;">
-              <span>电子卷宗</span>
-              <span style="flex: 1"></span>
-              <span @click="hideBook"><i style="font-size: 16px;" class="el-icon-d-arrow-left"></i></span>
-            </el-header>
-            <el-main style="flex: 1">
-              <div class="read-box" id="box">
-                <!-- 卷宗预览 -->
-                <div class="read" @click="isShowDrawer = false">
-                  <img v-for="(item,index) in 6"
-                       src="../../../../public/img/demo.png" alt="预览"
-                       height="auto" width="900px"
-                       :id="'img' + (index + 1)">
-                </div>
-                <!-- 阅卷工具条 -->
-                <div class="toods-read" draggable>
-                  <el-tooltip class="item" effect="dark" content="目录" placement="left">
-                    <i class="toods-icon el-icon-s-management" @click="openDrawer"></i>
-                  </el-tooltip>
-                  <el-tooltip class="item" effect="dark" content="放大" placement="left">
-                    <i class="toods-icon el-icon-zoom-in"></i>
-                  </el-tooltip>
-                  <el-tooltip class="item" effect="dark" content="缩小" placement="left">
-                    <i class="toods-icon el-icon-zoom-out"></i>
-                  </el-tooltip>
-                  <el-tooltip class="item" effect="dark" content="右旋转" placement="left">
-                    <i class="toods-icon el-icon-refresh-right"></i>
-                  </el-tooltip>
-                  <el-tooltip class="item" effect="dark" content="左旋转" placement="left">
-                    <i class="toods-icon el-icon-refresh-left"></i>
-                  </el-tooltip>
-                  <el-tooltip class="item" effect="dark" content="添加书签" placement="left">
-                    <i class="toods-icon el-icon-collection-tag"></i>
-                  </el-tooltip>
-                  <el-tooltip class="item" effect="dark" content="批注" placement="left">
-                    <i class="toods-icon el-icon-edit-outline"></i>
-                  </el-tooltip>
-                  <el-tooltip class="item" effect="dark" content="回到顶部" placement="left">
-                    <i class="toods-icon el-icon-upload2"></i>
-                  </el-tooltip>
-                </div>
-                <!-- 左侧卷宗目录 -->
-                <transition name="custom-classes-transition"
-                            enter-active-class="animated bounceInLeft"
-                            leave-active-class="animated bounceOutLeft">
-                  <div class="logs" v-show="isShowDrawer">
-                    <cataLog @nodeClick="nodeClick" @typeHandleClick="typeHandleClick"/>
-                  </div>
-                </transition>
-              </div>
-            </el-main>
-          </div>
-        </el-container>
-      </transition>
+        </transition>
+      </div>
+
+      <!--</transition>-->
       <!-- 右侧表单 -->
-      <el-aside :width="rightWidth" style="background-color: transparent;border-radius: 6px;">
-        <el-card v-if="!isNext" class="box-card">
+      <el-aside style="background-color: transparent;border-radius: 6px;flex: 1">
+        <div class="left-text" v-if="!isShowBook">
+          <span class="text-tag">电 子 卷 宗</span>
+        </div>
+        <div style="display: flex;flex-direction: column;height: 100%;width: 100%;">
+          <el-header class="header-box" style="height: 42px;">
+            <span>电子卷宗</span>
+            <span style="flex: 1"></span>
+            <!--<span @click="hideBook"><i style="font-size: 16px;" class="el-icon-d-arrow-left"></i></span>-->
+          </el-header>
+          <el-main style="flex: 1">
+            <div class="read-box" id="box">
+              <!-- 卷宗预览 -->
+              <div class="read" @click="isShowDrawer = false">
+                <img v-for="(item,index) in 6"
+                     :key="index"
+                     src="../../../../public/img/demo.png" alt="预览"
+                     height="auto" width="900px"
+                     :id="'img' + (index + 1)">
+              </div>
+              <!-- 阅卷工具条 -->
+              <div class="toods-read">
+                <el-tooltip effect="dark" content="目录" placement="left">
+                  <i class="toods-icon el-icon-s-management" @click="openDrawer"></i>
+                </el-tooltip>
+                <el-tooltip effect="dark" content="放大" placement="left">
+                  <i class="toods-icon el-icon-zoom-in"></i>
+                </el-tooltip>
+                <el-tooltip effect="dark" content="缩小" placement="left">
+                  <i class="toods-icon el-icon-zoom-out"></i>
+                </el-tooltip>
+                <el-tooltip effect="dark" content="右旋转" placement="left">
+                  <i class="toods-icon el-icon-refresh-right"></i>
+                </el-tooltip>
+                <el-tooltip effect="dark" content="左旋转" placement="left">
+                  <i class="toods-icon el-icon-refresh-left"></i>
+                </el-tooltip>
+                <el-tooltip effect="dark" content="添加书签" placement="left">
+                  <i class="toods-icon el-icon-collection-tag"></i>
+                </el-tooltip>
+                <el-tooltip effect="dark" content="批注" placement="left">
+                  <i class="toods-icon el-icon-edit-outline"></i>
+                </el-tooltip>
+                <el-tooltip effect="dark" content="回到顶部" placement="left">
+                  <i class="toods-icon el-icon-upload2"></i>
+                </el-tooltip>
+              </div>
+            </div>
+          </el-main>
+        </div>
+
+        <!--<el-card v-if="!isNext" class="box-card">
           <div slot="header" class="clearfix">
             <span>提取受理信息</span>
             <span style="margin: 0 8px 0 auto;float: right">
@@ -107,7 +110,7 @@
             </el-collapse>
           </div>
         </el-card>
-        <!-- 下一步案卡 -->
+        &lt;!&ndash; 下一步案卡 &ndash;&gt;
         <el-card v-if="isNext" class="box-card">
           <el-tabs v-model="activeName" @tab-click="handleClick">
             <el-tab-pane label="案卡" name="1">
@@ -141,9 +144,9 @@
                 </el-col>
               </el-row>
             </el-tab-pane>
-            <!--<el-tab-pane label="在办文书" name="2">在办文书</el-tab-pane>-->
+            &lt;!&ndash;<el-tab-pane label="在办文书" name="2">在办文书</el-tab-pane>&ndash;&gt;
           </el-tabs>
-        </el-card>
+        </el-card>-->
       </el-aside>
       <!--<div style="position: absolute;top: 10px;height: 200px;width: 40px;background-color: #f00">
         测试
@@ -252,7 +255,7 @@
       // 点击树节点跳转
       nodeClick( e ){
         this.openDrawer();
-        let toId = '#' + configData.nodeId[ e.id ] || 'img6';
+        let toId = '#' + (configData.nodeId[ e.id ] || 'img6');
         let boxDom = document.getElementById('box');
         boxDom.querySelector(toId).scrollIntoView(true);
       },
@@ -279,7 +282,7 @@
   .header-box {
     display: flex;
     line-height: 42px;
-    width: 99.3%;
+    width: 99.5%;
     font-size: 16px;
     /*color: #1B5E9C;*/
     font-weight: 800;
@@ -329,8 +332,8 @@
   }
 
   .el-card__header {
-    padding: 10px !important;
-    color: #1B5E9C;
+    /*padding: 10px !important;*/
+    /*color: #1B5E9C;*/
     font-weight: 800;
   }
 
@@ -380,9 +383,9 @@
     overflow-y: auto;
     background-color: #fff;
     padding: 10px;
-    position: absolute;
-    top: 0;
-    left: 0;
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: 0;*/
     border-radius: 6px;
     -webkit-box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 0.3);
     box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 0.3);
