@@ -219,6 +219,14 @@ const user = {
               meta: { i18n: "casesList" },
               path: "/44323",
             },
+            {
+              children: [],
+              component: "views/pages/casesList/casesList",
+              icon: "el-icon-news",
+              label: "数据应用",
+              meta: { i18n: "casesList" },
+              path: "/e44323",
+            },
             // {
             //   children: [],
             //   component: "views/pages/casesCard/casesCard",

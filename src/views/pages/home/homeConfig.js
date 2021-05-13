@@ -616,12 +616,12 @@ export default {
         span: 14,
         row: true
       },
-      // {
-      //   label: "文书号",
-      //   prop: "bookNo",
-      //   span: 14,
-      //   row: true
-      // },
+      {
+        label: "文书号",
+        prop: "bookNo",
+        span: 14,
+        row: true
+      },
       {
         label: "移送单位",
         prop: "organization",

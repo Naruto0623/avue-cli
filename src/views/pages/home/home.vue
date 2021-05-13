@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <draggable>
-      <el-row :gutter="12" style="margin-bottom: 12px;">
+      <el-row :gutter="12" class="margin-botm">
         <draggable>
           <el-col :span="18">
             <el-card class="box-card">
@@ -15,7 +15,7 @@
           </el-col>
         </draggable>
       </el-row>
-      <el-row :gutter="12" style="margin-bottom: 12px;">
+      <el-row :gutter="12" class="margin-botm">
         <el-col :span="18">
           <el-card class="box-card">
             <div slot="header">
@@ -33,60 +33,16 @@
         <el-col :span="6">
           <el-card class="box-card">
             <div slot="header">
-              <span>超期预警案件</span>
-            </div>
-            <el-row>
-              <el-col :span="14">
-                <div v-for="item in configData.listData1" :key="item.name" class="item">
-                  <span class="text">{{ item.name }}</span> -
-                  <span>{{ item.date }}</span>
-                </div>
-              </el-col>
-              <el-col :span="8" :offset="2">
-                <div class="count-box">
-                  <div class="count">8</div>
-                  <div class="count-text">总计</div>
-                </div>
-              </el-col>
-            </el-row>
-            <div class="foot" @click="toAll">查看全部</div>
-          </el-card>
-          <!--<el-card class="box-card">
-            <div slot="header">
               案件发生地分布（2340）
             </div>
             <div id="echart3" style="height: 422px;"></div>
-          </el-card>-->
-        </el-col>
-      </el-row>
-      <el-row :gutter="12" style="margin-bottom: 12px;">
-        <el-col :span="18">
-          <el-card class="box-card">
-            <div id="echart2" style="height: 394px;"></div>
-          </el-card>
-        </el-col>
-        <el-col :span="6">
-          <el-card class="box-card">
-            <div slot="header">
-              <span>办结案件</span>
-            </div>
-            <el-row>
-              <div v-for="item in configData.listData2" :key="item.name" class="item">
-                <span class="text">{{ item.name }}</span> -
-                <span>{{ item.date }}</span>
-              </div>
-            </el-row>
-            <div class="foot" @click="toAll">查看全部</div>
           </el-card>
         </el-col>
       </el-row>
-      <el-row>
-        <avue-data-box :option="configData.topOption"></avue-data-box>
-      </el-row>
-      <el-row :gutter="12" style="margin-bottom: 12px;">
+      <el-row :gutter="12" class="margin-botm">
         <draggable>
           <el-col :span="8">
-            <!--<el-card class="box-card">
+            <el-card class="box-card">
               <div slot="header">
                 <span>超期预警案件</span>
               </div>
@@ -105,12 +61,12 @@
                 </el-col>
               </el-row>
               <div class="foot" @click="toAll">查看全部</div>
-            </el-card>-->
+            </el-card>
           </el-col>
           <el-col :span="8">
             <el-card class="box-card" style="overflow:hidden;">
               <div slot="header">
-                <span>新案件动态</span>
+                <span>政法协同新案件</span>
               </div>
               <el-row>
                 <el-col :span="12">
@@ -149,6 +105,30 @@
             </el-card>
           </el-col>
         </draggable>
+      </el-row>
+      <el-row :gutter="12" class="margin-botm">
+        <el-col :span="18">
+          <el-card class="box-card">
+            <div id="echart2" style="height: 394px;"></div>
+          </el-card>
+        </el-col>
+        <el-col :span="6">
+          <el-card class="box-card">
+            <div slot="header">
+              <span>办结案件</span>
+            </div>
+            <el-row>
+              <div v-for="item in configData.listData2" :key="item.name" class="item">
+                <span class="text">{{ item.name }}</span> -
+                <span>{{ item.date }}</span>
+              </div>
+            </el-row>
+            <div class="foot" @click="toAll">查看全部</div>
+          </el-card>
+        </el-col>
+      </el-row>
+      <el-row>
+        <avue-data-box :option="configData.topOption"></avue-data-box>
       </el-row>
     </draggable>
   </div>
@@ -326,6 +306,10 @@
 </script>
 
 <style>
+  .margin-botm {
+
+  }
+
   .home {
     color: #3e3e3c;
     padding: 12px;
