@@ -67,7 +67,7 @@
       // 案件详情跳转
       handleRowClick( row, event, column ){
         this.$router.push({
-          path: '/casesCard/index',
+          path: '/tagging/index',
           query: {
             name: row.name,
             type: row.type,

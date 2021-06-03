@@ -235,6 +235,30 @@ const user = {
             //   meta: { i18n: "casesCard" },
             //   path: "/casesCard",
             // },
+            {
+              children: [],
+              component: "views/pages/tagging/tagging",
+              icon: "el-icon-news",
+              label: "辅助阅卷",
+              meta: { i18n: "tagging" },
+              path: "/tagging",
+            },
+            {
+              children: [],
+              component: "views/pages/documentMaking/documentMaking",
+              icon: "el-icon-news",
+              label: "文书制作",
+              meta: { i18n: "documentMaking" },
+              path: "/documentMaking",
+            },
+            {
+              children: [],
+              component: "views/pages/taskLook/taskLook",
+              icon: "el-icon-news",
+              label: "任务看板",
+              meta: { i18n: "taskLook" },
+              path: "/taskLook",
+            },
           ];
           menu.forEach(ele => {
             addPath(ele, true);

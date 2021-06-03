@@ -1,9 +1,9 @@
 // 配置编译环境和线上环境之间的切换
 
 let baseUrl = '';
-let iconfontVersion = ['567566_pwc3oottzol',];
+let iconfontVersion = ['567566_pwc3oottzol', '2560565_41nxl140mg7'];//at.alicdn.com/t/font_2560565_41nxl140mg7.css
 let iconfontUrl = `//at.alicdn.com/t/font_$key.css`;
-let codeUrl = `${baseUrl}/code`
+let codeUrl = `${ baseUrl }/code`
 const env = process.env
 if (env.NODE_ENV == 'development') {
   baseUrl = ``; // 开发环境地址

@@ -332,53 +332,36 @@ export default {
   },
   echartOption3: {
     title: {
-      // text: '总计：23394',
-      // subtext: '案件数'
+      text: ' ',
+      subtext: '',
+      left: 'center'
     },
     tooltip: {
       trigger: 'item'
     },
     legend: {
-      top: '2%',
-      left: 'center'
+      orient: 'horizontal',
+      left: 'center',
     },
     series: [
       {
-        name: '案件数',
+        name: '案件数量',
         type: 'pie',
-        radius: ['40%', '70%'],
-        avoidLabelOverlap: false,
-        itemStyle: {
-          borderRadius: 10,
-          borderColor: '#fff',
-          borderWidth: 2
-        },
-        label: {
-          show: false,
-          position: 'center'
-        },
-        emphasis: {
-          label: {
-            show: true,
-            fontSize: '40',
-            fontWeight: 'bold'
-          }
-        },
-        labelLine: {
-          show: false
-        },
+        radius: '50%',
         data: [
-          { value: 1048, name: '和平' },
-          { value: 735, name: '河东' },
-          { value: 580, name: '河西' },
-          { value: 484, name: '南开' },
-          { value: 300, name: '河北' },
-          { value: 1048, name: '红桥' },
-          { value: 735, name: '东丽' },
-          { value: 580, name: '西青' },
-          { value: 484, name: '津南' },
-          { value: 300, name: '北辰' },
-        ]
+          // {value: 1048, name: '搜索引擎'},
+          {value: 735, name: '办理中'},
+          {value: 580, name: '已办结'},
+          {value: 484, name: '预警案件'},
+          {value: 300, name: '超期案件'}
+        ],
+        emphasis: {
+          itemStyle: {
+            shadowBlur: 10,
+            shadowOffsetX: 0,
+            shadowColor: 'rgba(0, 0, 0, 0.5)'
+          }
+        }
       }
     ]
   },

@@ -63,7 +63,7 @@
               <i class="toods-icon el-icon-refresh-right"></i>
               <i class="toods-icon el-icon-refresh-left"></i>
               <i class="toods-icon el-icon-collection-tag"></i>
-              <i class="toods-icon el-icon-edit-outline"></i>
+              <!--<i class="toods-icon el-icon-edit-outline"></i>-->
               <i class="toods-icon el-icon-upload2"></i>
             </div>
           </div>

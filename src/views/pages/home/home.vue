@@ -33,8 +33,8 @@
         <el-col :span="6">
           <el-card class="box-card">
             <div slot="header">
-              案件发生地分布（2340）
-            </div>
+            案件动态
+          </div>
             <div id="echart3" style="height: 422px;"></div>
           </el-card>
         </el-col>
@@ -267,12 +267,12 @@
       },
       toAll(){
         this.$router.push({
-          path: '/casesList/index',
+          path: '/taskLook/index',
         })
       },
       toPage(){
         this.$router.push({
-          path: '/casesCard/index',
+          path: '/tagging/index',
           query: {
             name: '张三非法经营案',
             type: '一审公诉案件'
@@ -284,7 +284,7 @@
       },
       handleRowClick( row, event, column ){
         this.$router.push({
-          path: '/casesCard/index',
+          path: '/tagging/index',
           query: {
             name: row.name,
             type: row.type,

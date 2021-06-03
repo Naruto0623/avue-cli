@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-tabs @tab-click="handleClick" type="border-card" value="目录" style="min-height: 800px;">
+    <el-tabs @tab-click="handleClick" type="border-card" value="目录" :style="{'min-height': `${height}px`}">
       <el-tab-pane label="目录" name="目录" key="目录">
         <el-input v-model="filterText"
                   style="margin-bottom: 10px;"
@@ -8,8 +8,8 @@
         </el-input>
         <el-tabs v-model="activeName" @tab-click="typeHandleClick">
           <template v-for="item in configData.tabData">
-            <el-tab-pane :label="item" :name="item" :key="item">
-              <el-tree :key="item"
+            <el-tab-pane :label="item" :name="item" :key="item.id">
+              <el-tree :key="item.id"
                        draggable
                        default-expand-all
                        @node-click="nodeClick"
@@ -75,6 +75,11 @@
 
   export default {
     name: "cataLog",
+    props: {
+      height: {
+        default: 800
+      }
+    },
     data(){
       return {
         configData,

@@ -8,7 +8,9 @@
                    @select="handleSelect">
     <el-select v-model="select" slot="prepend" placeholder="全部" style="width: 80px;">
       <el-option label="全部" value="1"></el-option>
-      <el-option label="案件卷宗" value="2"></el-option>
+      <el-option label="知网" value="2"></el-option>
+      <el-option label="法信" value="3"></el-option>
+      <el-option label="指导案例" value="4"></el-option>
     </el-select>
     <template slot-scope="{ item }">
       <i :class="[item[iconKey],'icon']"></i>

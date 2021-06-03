@@ -64,9 +64,9 @@
                 <el-tooltip effect="dark" content="添加书签" placement="left">
                   <i class="toods-icon el-icon-collection-tag"></i>
                 </el-tooltip>
-                <el-tooltip effect="dark" content="批注" placement="left">
+                <!--<el-tooltip effect="dark" content="批注" placement="left">
                   <i class="toods-icon el-icon-edit-outline"></i>
-                </el-tooltip>
+                </el-tooltip>-->
                 <el-tooltip effect="dark" content="回到顶部" placement="left">
                   <i class="toods-icon el-icon-upload2"></i>
                 </el-tooltip>
@@ -393,7 +393,7 @@
 
   .toods-read {
     width: 35px;
-    height: 270px;
+    height: 240px;
     padding: 5px;
     background-color: #1b5e9c;
     border-radius: 6px;
@@ -402,7 +402,7 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    right: 7px;
+    right: 13px;
     top: 35%;
   }
 

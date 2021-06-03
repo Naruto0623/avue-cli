@@ -1,12 +1,12 @@
 export default {
-  tabData: ['全部', '起诉意见书', '证据卷', '犯罪嫌疑人'],
+  tabData: ['全部', '起诉意见书', '诉讼文书卷', '证据卷'],
   // tabData: ['基本信息', '案卡', '关系图谱', '文书制作'],
   // 树节点
   treeData: {
     '全部': [
       {
         id: 1,
-        label: '葛某某危险驾驶案-一审公诉案件（共14页）',
+        label: '马团结非法吸收公众存款案（共14页）',
         icon: 'el-icon-message',
         indexNum: 1,
         isTitle: true,
