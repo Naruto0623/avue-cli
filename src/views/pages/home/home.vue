@@ -22,9 +22,15 @@
               <span>在办案件</span>
             </div>
             <el-row>
-              <avue-crud :option="option"
-                         @row-dblclick="handleRowClick"
-                         :data="data">
+              <avue-crud :option="configData.option"
+                         @row-click="isShowEchart = false"
+                         :data="configData.data">
+                <template slot="name" slot-scope="{row}">
+                  <span style="cursor:pointer;text-decoration: underline;color: #006dcc"
+                        @click="handleRowClick">
+                    {{ row.name }}
+                  </span>
+                </template>
               </avue-crud>
             </el-row>
             <div class="foot" @click="toAll">查看全部</div>
@@ -33,13 +39,92 @@
         <el-col :span="6">
           <el-card class="box-card">
             <div slot="header">
-            案件动态
-          </div>
-            <div id="echart3" style="height: 422px;"></div>
+              案件动态
+            </div>
+            <div v-if="isShowEchart" id="echart3" style="height: 422px;"></div>
+            <el-row v-else>
+              <el-row type="flex" justify="center">
+                <el-progress :show-text="true" :width="200" :format="progressText" type="circle" :percentage="25">办理进度</el-progress>
+              </el-row>
+              <el-row style="margin-top: 12px;font-size: 14px;">
+                <el-row>
+                  <el-col :span="20"><span class="text">阅卷笔录</span></el-col>
+                  <el-col :span="4" class="red-text">未完成</el-col>
+                </el-row>
+                <el-row>
+                  <el-col :span="20"><span class="text">起诉书</span></el-col>
+                  <el-col :span="4" class="red-text">未完成</el-col>
+                </el-row>
+                <el-row>
+                  <el-col :span="20"><span class="text">认罪认罚权利告知书</span></el-col>
+                  <el-col :span="4" class="green-text">已入卷</el-col>
+                </el-row>
+                <el-row>
+                  <el-col :span="20"><span class="text">审查报告</span></el-col>
+                  <el-col :span="4" class="green-text">已入卷</el-col>
+                </el-row>
+              </el-row>
+              <el-row>
+                <el-col :span="8">
+                  <p><b>状态：</b>办理中</p>
+                </el-col>
+                <el-col :span="8">
+                  <p><b>阶段：</b>审查起诉</p>
+                </el-col>
+                <el-col :span="8">
+                  <p><b>剩余期限：</b>23</p>
+                </el-col>
+              </el-row>
+              <div class="foot" @click="toAll">查看详情</div>
+            </el-row>
           </el-card>
         </el-col>
       </el-row>
       <el-row :gutter="12" class="margin-botm">
+        <el-col :span="18">
+          <el-card class="box-card">
+            <div slot="header">
+              <span>待受理案件</span>
+            </div>
+            <el-row>
+              <avue-crud :option="configData.option1"
+                         @row-dblclick="toCard"
+                         :data="data">
+                <template slot="name" slot-scope="{row}">
+                  <span style="cursor:pointer;text-decoration: underline;color: #006dcc"
+                        @click="toCard">
+                    {{ row.name }}
+                  </span>
+                </template>
+              </avue-crud>
+            </el-row>
+            <div class="foot" @click="toAll">查看全部</div>
+          </el-card>
+        </el-col>
+        <el-col :span="6">
+          <el-card class="box-card">
+            <div slot="header">
+              <span>超期预警案件</span>
+            </div>
+            <el-row>
+              <el-col :span="24">
+                <div v-for="item in configData.listData" :key="item.name" class="item">
+                  <span class="text">{{ item.name }}</span> -
+                  <span>{{ item.date }}</span>
+                </div>
+              </el-col>
+              <!--<el-col :span="8" :offset="4">
+                <div class="count-box">
+                  <div class="count">8</div>
+                  <div class="count-text">总计</div>
+                </div>
+              </el-col>-->
+            </el-row>
+            <div class="foot" @click="toAll">查看全部</div>
+          </el-card>
+        </el-col>
+      </el-row>
+      <!--<el-row :gutter="12" class="margin-botm">
         <draggable>
           <el-col :span="8">
             <el-card class="box-card">
@@ -105,7 +190,7 @@
             </el-card>
           </el-col>
         </draggable>
-      </el-row>
+      </el-row>-->
       <el-row :gutter="12" class="margin-botm">
         <el-col :span="18">
           <el-card class="box-card">
@@ -127,9 +212,9 @@
           </el-card>
         </el-col>
       </el-row>
-      <el-row>
+      <!--<el-row>
         <avue-data-box :option="configData.topOption"></avue-data-box>
-      </el-row>
+      </el-row>-->
     </draggable>
   </div>
 </template>
@@ -145,6 +230,8 @@
     data(){
       return {
         configData,
+        // 案件动态是否展示图表
+        isShowEchart: true,
         page: {
           pageSize: 10,
           // pagerCount:5,
@@ -155,6 +242,14 @@
       }
     },
     methods: {
+      toCard(){
+        this.$router.push({
+          path: '/cardOk/index',
+        })
+      },
+      progressText( e ){
+        return '办理进度：25%'
+      },
       echartInit3(){
         // 基于准备好的dom，初始化echarts实例
         let myChart = echarts.init(document.getElementById('echart3'));
@@ -274,7 +369,7 @@
         this.$router.push({
           path: '/tagging/index',
           query: {
-            name: '张三非法经营案',
+            name: '张三非法吸收公众存款案',
             type: '一审公诉案件'
           }
         })
@@ -298,7 +393,7 @@
       },
     },
     mounted(){
-      this.echartInit1();
+      // this.echartInit1();
       this.echartInit2();
       this.echartInit3();
     }
@@ -337,6 +432,15 @@
   .text {
     color: #006dcc;
     border-bottom: 1px dotted;
+    cursor: pointer;
+  }
+
+  .green-text {
+    color: #67C23A;
+  }
+
+  .red-text {
+    color: #F56C6C
   }
 
   .item {

@@ -237,6 +237,14 @@ const user = {
             // },
             {
               children: [],
+              component: "views/pages/cardOk/cardOk",
+              icon: "el-icon-news",
+              label: "智慧受案",
+              meta: { i18n: "cardOk" },
+              path: "/cardOk",
+            },
+            {
+              children: [],
               component: "views/pages/tagging/tagging",
               icon: "el-icon-news",
               label: "辅助阅卷",

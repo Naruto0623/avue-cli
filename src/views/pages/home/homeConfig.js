@@ -1,13 +1,13 @@
 export default {
   listData: [
     {
-      name: "张三非法经营案",
+      name: "张三非法吸收公众存款案",
       source: "公安局",
       type: '一审公诉案件',
       date: "2021-2-6 17:01:08",
-      bookName: "起诉意见书",
+      bookName: "32",
       bookNo: "津武公（济）诉字[2021]10122号",
-      organization: "天津市公安局武清分局"
+      organization: "天津市公安局和平分局"
     },
     {
       name: "李四故意伤害案",
@@ -16,7 +16,7 @@ export default {
       date: "2021-2-6 17:01:08",
       bookName: "起诉意见书",
       bookNo: "津武公（济）诉字[2021]10122号",
-      organization: "天津市公安局武清分局"
+      organization: "天津市公安局和平分局"
     },
     {
       name: "王五寻衅滋事案",
@@ -25,7 +25,7 @@ export default {
       date: "2021-2-6 17:01:08",
       bookName: "起诉意见书",
       bookNo: "津武公（济）诉字[2021]10122号",
-      organization: "天津市公安局武清分局"
+      organization: "天津市公安局和平分局"
     },
     {
       name: "赵六诈骗案",
@@ -34,7 +34,7 @@ export default {
       date: "2021-2-6 17:01:08",
       bookName: "起诉意见书",
       bookNo: "津武公（济）诉字[2021]10122号",
-      organization: "天津市公安局武清分局"
+      organization: "天津市公安局和平分局"
     },
     {
       name: "张三、李四等3人诈骗案",
@@ -43,18 +43,45 @@ export default {
       date: "2021-2-6 17:01:08",
       bookName: "起诉意见书",
       bookNo: "津武公（济）诉字[2021]10122号",
-      organization: "天津市公安局武清分局"
+      organization: "天津市公安局和平分局"
+    },
+    {
+      name: "张三非法吸收公众存款案",
+      source: "公安局",
+      type: '一审公诉案件',
+      date: "2021-2-6 17:01:08",
+      bookName: "32",
+      bookNo: "津武公（济）诉字[2021]10122号",
+      organization: "天津市公安局和平分局"
+    },
+    {
+      name: "李四故意伤害案",
+      source: "公安局",
+      type: '一审公诉案件',
+      date: "2021-2-6 17:01:08",
+      bookName: "起诉意见书",
+      bookNo: "津武公（济）诉字[2021]10122号",
+      organization: "天津市公安局和平分局"
+    },
+    {
+      name: "王五寻衅滋事案",
+      source: "公安局",
+      type: '一审公诉案件',
+      date: "2021-2-6 17:01:08",
+      bookName: "起诉意见书",
+      bookNo: "津武公（济）诉字[2021]10122号",
+      organization: "天津市公安局和平分局"
     },
   ],
   listData1: [
     {
-      name: "张三非法经营案",
+      name: "张三非法吸收公众存款案",
       source: "公安局",
       type: '一审公诉案件',
       date: "2021-2-6 17:01:08",
       bookName: "起诉意见书",
       bookNo: "津武公（济）诉字[2021]10122号",
-      organization: "天津市公安局武清分局"
+      organization: "天津市公安局和平分局"
     },
     {
       name: "李四故意伤害案",
@@ -63,7 +90,7 @@ export default {
       date: "2021-2-6 17:01:08",
       bookName: "起诉意见书",
       bookNo: "津武公（济）诉字[2021]10122号",
-      organization: "天津市公安局武清分局"
+      organization: "天津市公安局和平分局"
     },
     {
       name: "王五寻衅滋事案",
@@ -72,7 +99,7 @@ export default {
       date: "2021-2-6 17:01:08",
       bookName: "起诉意见书",
       bookNo: "津武公（济）诉字[2021]10122号",
-      organization: "天津市公安局武清分局"
+      organization: "天津市公安局和平分局"
     },
     {
       name: "赵六诈骗案",
@@ -81,45 +108,45 @@ export default {
       date: "2021-2-6 17:01:08",
       bookName: "起诉意见书",
       bookNo: "津武公（济）诉字[2021]10122号",
-      organization: "天津市公安局武清分局"
+      organization: "天津市公安局和平分局"
     },
     {
-      name: "张三非法经营案",
+      name: "张三非法吸收公众存款案",
       source: "公安局",
       type: '一审公诉案件',
       date: "2021-2-6 17:01:08",
       bookName: "起诉意见书",
       bookNo: "津武公（济）诉字[2021]10122号",
-      organization: "天津市公安局武清分局"
+      organization: "天津市公安局和平分局"
     },
     {
-      name: "张三,李四,赵六非法经营案",
+      name: "张三,李四,赵六非法吸收公众存款案",
       source: "公安局",
       type: '一审公诉案件',
       date: "2021-2-6 17:01:08",
       bookName: "起诉意见书",
       bookNo: "津武公（济）诉字[2021]10122号",
-      organization: "天津市公安局武清分局"
+      organization: "天津市公安局和平分局"
     },
     {
-      name: "张三,李四,赵六非法经营案",
+      name: "张三,李四,赵六非法吸收公众存款案",
       source: "公安局",
       type: '一审公诉案件',
       date: "2021-2-6 17:01:08",
       bookName: "起诉意见书",
       bookNo: "津武公（济）诉字[2021]10122号",
-      organization: "天津市公安局武清分局"
+      organization: "天津市公安局和平分局"
     },
   ],
   listData2: [
     {
-      name: "张三非法经营案",
+      name: "张三非法吸收公众存款案",
       source: "公安局",
       type: '一审公诉案件',
       date: "2021-2-6 17:01:08",
       bookName: "起诉意见书",
       bookNo: "津武公（济）诉字[2021]10122号",
-      organization: "天津市公安局武清分局"
+      organization: "天津市公安局和平分局"
     },
     {
       name: "李四故意伤害案",
@@ -128,7 +155,7 @@ export default {
       date: "2021-2-6 17:01:08",
       bookName: "起诉意见书",
       bookNo: "津武公（济）诉字[2021]10122号",
-      organization: "天津市公安局武清分局"
+      organization: "天津市公安局和平分局"
     },
     {
       name: "王五寻衅滋事案",
@@ -137,7 +164,7 @@ export default {
       date: "2021-2-6 17:01:08",
       bookName: "起诉意见书",
       bookNo: "津武公（济）诉字[2021]10122号",
-      organization: "天津市公安局武清分局"
+      organization: "天津市公安局和平分局"
     },
     {
       name: "赵六诈骗案",
@@ -146,7 +173,7 @@ export default {
       date: "2021-2-6 17:01:08",
       bookName: "起诉意见书",
       bookNo: "津武公（济）诉字[2021]10122号",
-      organization: "天津市公安局武清分局"
+      organization: "天津市公安局和平分局"
     },
     {
       name: "张三、李四等3人诈骗案",
@@ -155,16 +182,16 @@ export default {
       date: "2021-2-6 17:01:08",
       bookName: "起诉意见书",
       bookNo: "津武公（济）诉字[2021]10122号",
-      organization: "天津市公安局武清分局"
+      organization: "天津市公安局和平分局"
     },
     {
-      name: "张三非法经营案",
+      name: "张三非法吸收公众存款案",
       source: "公安局",
       type: '一审公诉案件',
       date: "2021-2-6 17:01:08",
       bookName: "起诉意见书",
       bookNo: "津武公（济）诉字[2021]10122号",
-      organization: "天津市公安局武清分局"
+      organization: "天津市公安局和平分局"
     },
     {
       name: "李四故意伤害案",
@@ -173,7 +200,7 @@ export default {
       date: "2021-2-6 17:01:08",
       bookName: "起诉意见书",
       bookNo: "津武公（济）诉字[2021]10122号",
-      organization: "天津市公安局武清分局"
+      organization: "天津市公安局和平分局"
     },
     {
       name: "王五寻衅滋事案",
@@ -182,7 +209,7 @@ export default {
       date: "2021-2-6 17:01:08",
       bookName: "起诉意见书",
       bookNo: "津武公（济）诉字[2021]10122号",
-      organization: "天津市公安局武清分局"
+      organization: "天津市公安局和平分局"
     },
     {
       name: "赵六诈骗案",
@@ -191,7 +218,7 @@ export default {
       date: "2021-2-6 17:01:08",
       bookName: "起诉意见书",
       bookNo: "津武公（济）诉字[2021]10122号",
-      organization: "天津市公安局武清分局"
+      organization: "天津市公安局和平分局"
     },
     {
       name: "张三、李四等3人诈骗案",
@@ -200,7 +227,7 @@ export default {
       date: "2021-2-6 17:01:08",
       bookName: "起诉意见书",
       bookNo: "津武公（济）诉字[2021]10122号",
-      organization: "天津市公安局武清分局"
+      organization: "天津市公安局和平分局"
     },
     {
       name: "赵六诈骗案",
@@ -209,7 +236,7 @@ export default {
       date: "2021-2-6 17:01:08",
       bookName: "起诉意见书",
       bookNo: "津武公（济）诉字[2021]10122号",
-      organization: "天津市公安局武清分局"
+      organization: "天津市公安局和平分局"
     },
   ],
   // 上方统计配置
@@ -450,14 +477,14 @@ export default {
     data: [
       {
         title: '在办案件数',
-        count: 12678,
+        count: 1519,
         icon: "el-icon-s-marketing",
         href: "https://avuejs.com",
         target: "_blank"
       },
       {
         title: '办结案件数',
-        count: 22139,
+        count: 580,
         icon: "el-icon-s-data",
         href: "https://avuejs.com",
         target: "_blank"
@@ -480,58 +507,70 @@ export default {
   },
   data: [
     {
-      name: "张三非法经营案",
-      source: "公安局",
+      name: "张三非法吸收公众存款案",
+      stage: '审查起诉',
+      id: '津检刑诉受[2021]187000998893029号',
+      source: "政法协同",
       type: '一审公诉案件',
       date: "2021-2-6 17:01:08",
-      bookName: "起诉意见书",
+      bookName: "3",
       bookNo: "津武公（济）诉字[2021]10122号",
-      organization: "天津市公安局武清分局"
+      organization: "天津市公安局和平分局"
     },
     {
       name: "李四故意伤害案",
-      source: "公安局",
+      stage: '审查起诉',
+      id: '津检刑诉受[2021]187000998893029号',
+      source: "政法协同",
       type: '一审公诉案件',
       date: "2021-2-6 17:01:08",
-      bookName: "起诉意见书",
+      bookName: "2",
       bookNo: "津武公（济）诉字[2021]10122号",
-      organization: "天津市公安局武清分局"
+      organization: "天津市公安局和平分局"
     },
     {
       name: "王五寻衅滋事案",
-      source: "公安局",
+      stage: '审查起诉',
+      id: '津检刑诉受[2021]187000998893029号',
+      source: "政法协同",
       type: '一审公诉案件',
       date: "2021-2-6 17:01:08",
-      bookName: "起诉意见书",
+      bookName: "4",
       bookNo: "津武公（济）诉字[2021]10122号",
-      organization: "天津市公安局武清分局"
+      organization: "天津市公安局和平分局"
     },
     {
       name: "赵六诈骗案",
-      source: "公安局",
+      stage: '审查起诉',
+      id: '津检刑诉受[2021]187000998893029号',
+      source: "统一业务2.0",
       type: '一审公诉案件',
       date: "2021-2-6 17:01:08",
-      bookName: "起诉意见书",
+      bookName: "1",
       bookNo: "津武公（济）诉字[2021]10122号",
-      organization: "天津市公安局武清分局"
+      organization: "天津市公安局和平分局"
     },
     {
       name: "张三、李四等3人诈骗案",
-      source: "公安局",
+      stage: '审查起诉',
+      id: '津检刑诉受[2021]187000998893029号',
+      source: "统一业务2.0",
       type: '一审公诉案件',
       date: "2021-2-6 17:01:08",
-      bookName: "起诉意见书",
+      bookName: "5",
       bookNo: "津武公（济）诉字[2021]10122号",
-      organization: "天津市公安局武清分局"
+      organization: "天津市公安局和平分局"
     },
     {
       name: "王五寻衅滋事案",
-      source: "公安局",
+      stage: '审查起诉',
+      id: '津检刑诉受[2021]187000998893029号',
+      source: "政法协同",
       type: '一审公诉案件',
       date: "2021-2-6 17:01:08",
-      bookName: "起诉意见书",
+      bookName: "6",
       bookNo: "津武公（济）诉字[2021]10122号",
-      organization: "天津市公安局武清分局"
+      organization: "天津市公安局和平分局"
     },
     // {
     //   name: "赵六诈骗案",
@@ -540,7 +579,7 @@ export default {
     //   date: "2021-2-6 17:01:08",
     //   bookName: "起诉意见书",
     //   bookNo: "津武公（济）诉字[2021]10122号",
-    //   organization: "天津市公安局武清分局"
+    //   organization: "天津市公安局和平分局"
     // },
   ],
   option: {
@@ -568,8 +607,22 @@ export default {
     // dateBtn: true,
     column: [
       {
+        label: "部门受案号",
+        prop: "id",
+        span: 14,
+        row: true
+      },
+      {
         label: "案件名称",
         prop: "name",
+        span: 14,
+        row: true
+      },
+      {
+        label: "卷宗册数",
+        prop: "bookName",
+        // hide: false,
+        width: 100,
         span: 14,
         row: true
       },
@@ -580,9 +633,22 @@ export default {
         row: true
       },
       {
-        label: "案件来源",
-        prop: "source",
+        label: "办理阶段",
+        prop: "stage",
+        width: 120,
         span: 14,
+        row: true
+      },
+      // {
+      //   label: "文书号",
+      //   prop: "bookNo",
+      //   span: 14,
+      //   row: true
+      // },
+      {
+        label: "移送单位",
+        prop: "organization",
+        span: 24,
         row: true
       },
       {
@@ -592,25 +658,86 @@ export default {
         span: 14,
         row: true
       },
+    ]
+  },
+  option1: {
+    columnBtn:false,
+    addBtn: false,
+    editBtn: false,
+    delBtn: false,
+    align: 'left',
+    menu: false,
+    menuAlign: 'left',
+    menuType: 'icon',
+    searchMenuPosition: 'right',
+    // sortable: true,
+    // dragHandler: true,
+    searchBtn: false,
+    refreshBtn: false,
+    filterBtn: false,
+    sizeValue: 'small',
+    indexLabel: '   ',
+    index: true,
+    selection: false,
+    // selectionWidth: 60,
+    showIndex: true,
+    showCheckbox: true,
+    // dateBtn: true,
+    column: [
       {
-        label: "文书名称",
+        label: "部门受案号",
+        prop: "id",
+        span: 14,
+        row: true
+      },
+      {
+        label: "案件名称",
+        prop: "name",
+        span: 14,
+        row: true
+      },
+      {
+        label: "卷宗册数",
         prop: "bookName",
         // hide: false,
+        width: 100,
         span: 14,
         row: true
       },
       {
-        label: "文书号",
-        prop: "bookNo",
+        label: "案件类别",
+        prop: "type",
         span: 14,
+        width: 120,
         row: true
       },
+      // {
+      //   label: "案件来源",
+      //   prop: "source",
+      //   width: 120,
+      //   span: 14,
+      //   row: true
+      // },
+      // {
+      //   label: "文书号",
+      //   prop: "bookNo",
+      //   span: 14,
+      //   row: true
+      // },
       {
         label: "移送单位",
         prop: "organization",
         span: 24,
         row: true
       },
+      {
+        label: "移送日期",
+        prop: "date",
+        type: "date",
+        width: 150,
+        span: 14,
+        row: true
+      },
     ]
-  }
+  },
 }

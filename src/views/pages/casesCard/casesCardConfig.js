@@ -76,7 +76,7 @@ export default {
       },
       {
         type: 'input',
-        label: '移诉罪民',
+        label: '移诉罪名',
         suffixIcon: 'el-icon-view',
         span: 24,
         display: true,
@@ -85,7 +85,7 @@ export default {
         rules: [
           {
             required: null,
-            message: '移诉罪民必须填写'
+            message: '移诉罪名必须填写'
           }
         ]
       },
@@ -394,7 +394,7 @@ export default {
       },
       {
         type: 'input',
-        label: '移速罪名',
+        label: '移送罪名',
         span: 12,
         display: true,
         prop: '1617791461707_15715',
@@ -402,7 +402,7 @@ export default {
       },
       {
         type: 'input',
-        label: '移速其他罪名',
+        label: '移送其他罪名',
         span: 12,
         display: true,
         prop: '1617791479724_43996'

@@ -74,8 +74,7 @@
             </div>
           </el-main>
         </div>
-
-        <!--<el-card v-if="!isNext" class="box-card">
+        <el-card v-if="!isNext" class="box-card">
           <div slot="header" class="clearfix">
             <span>提取受理信息</span>
             <span style="margin: 0 8px 0 auto;float: right">
@@ -110,7 +109,7 @@
             </el-collapse>
           </div>
         </el-card>
-        &lt;!&ndash; 下一步案卡 &ndash;&gt;
+        <!-- 下一步案卡 -->
         <el-card v-if="isNext" class="box-card">
           <el-tabs v-model="activeName" @tab-click="handleClick">
             <el-tab-pane label="案卡" name="1">
@@ -144,9 +143,9 @@
                 </el-col>
               </el-row>
             </el-tab-pane>
-            &lt;!&ndash;<el-tab-pane label="在办文书" name="2">在办文书</el-tab-pane>&ndash;&gt;
+            <!--<el-tab-pane label="在办文书" name="2">在办文书</el-tab-pane>-->
           </el-tabs>
-        </el-card>-->
+        </el-card>
       </el-aside>
       <!--<div style="position: absolute;top: 10px;height: 200px;width: 40px;background-color: #f00">
         测试
@@ -170,8 +169,8 @@
         radio: '1',
         form0: {
           name: this.$route.query.name,
-          name1: '非法经营罪',
-          name2: '武清分局',
+          name1: '非法吸收公众存款罪',
+          name2: '和平分局',
           name3: '公安局',
           name4: '津武公10122号',
           name5: '',
@@ -234,8 +233,8 @@
 
       },
       submit(){
-        this.isNext = true;
-        this.hideBook();
+        // this.isNext = true;
+        // this.hideBook();
       },
       // 加载标红的字段
       alertMessage( form, fieldList ){

@@ -1,4 +1,8 @@
 export default {
+  manList: [
+    { "value": "张检察官", "address": "张检察官" },
+    { "value": "李检察官", "address": "李检察官" },
+  ],
   cardLogData: [
     {
       id: 2,
@@ -32,7 +36,7 @@ export default {
         span: 12,
         display: true,
         prop: '1622019715242_74243',
-        value: '蒋某某非法经营案'
+        value: '蒋某某非法吸收公众存款案'
       },
       {
         type: 'input',
@@ -40,7 +44,7 @@ export default {
         span: 12,
         display: true,
         prop: '1622019880120_13046',
-        value: '非法经营罪'
+        value: '非法吸收公众存款罪'
       },
       {
         type: 'input',
@@ -48,7 +52,7 @@ export default {
         span: 12,
         display: true,
         prop: '1622020059370_47157',
-        value: '天津市公安局武清分局'
+        value: '天津市公安局和平分局'
       },
       {
         type: 'input',
@@ -56,7 +60,7 @@ export default {
         span: 12,
         display: true,
         prop: '1622020101794_97731',
-        value: '天津市公安局武清分局'
+        value: '天津市公安局和平分局'
       },
       {
         type: 'input',
@@ -79,7 +83,7 @@ export default {
         span: 24,
         display: true,
         prop: '1622020357534_13330',
-        value: '2019年至2020年，被告人蒋某某在天津市河东区合美国际C座1016房间等地，以牟利为目的，在未取得危险化学品经营 许可证的情况下，通过网络联系、发送“闪送”、快递等方式，向夭津市河东区金宝街92号励骏酒店1510房间等地销售一 氧化二氮（俗称“笑气”），累计经营数额人民币50余万元。天津市公安局武清分局建国门派出所民警于2020年1月16日将 蒋某某查获，并于天津市河东区合美国际C座1016房间内起获其用于销售的一氧化二氮22750支'
+        value: '2019年至2020年，被告人蒋某某在天津市河东区合美国际C座1016房间等地，以牟利为目的，在未取得危险化学品经营 许可证的情况下，通过网络联系、发送“闪送”、快递等方式，向夭津市河东区金宝街92号励骏酒店1510房间等地销售一 氧化二氮（俗称“笑气”），累计经营数额人民币50余万元。天津市公安局和平分局建国门派出所民警于2020年1月16日将 蒋某某查获，并于天津市河东区合美国际C座1016房间内起获其用于销售的一氧化二氮22750支'
       },
     ],
     labelPosition: 'right',
@@ -102,7 +106,7 @@ export default {
         span: 12,
         display: true,
         prop: '1622080004569_90420',
-        value: '马团'
+        value: '张三'
       },
       {
         type: 'input',
@@ -200,7 +204,7 @@ export default {
         value: '3510000元'
       }
     ],
-    labelPosition: 'right',
+    labelPosition: 'top',
     labelSuffix: '：',
     labelWidth: 100,
     gutter: 0,
@@ -210,7 +214,7 @@ export default {
     emptyBtn: true,
     emptyText: '清空',
     menuPosition: 'center',
-    detail: true
+    detail: false
   },
   optionMan2: {
     column: [
@@ -312,7 +316,7 @@ export default {
     emptyBtn: true,
     emptyText: '清空',
     menuPosition: 'center',
-    detail: true
+    detail: false
   },
   option1: {
     column: [
@@ -336,7 +340,7 @@ export default {
       },
       {
         type: 'input',
-        label: '移诉罪民',
+        label: '移诉罪名',
 
         span: 24,
         display: true,
@@ -345,7 +349,7 @@ export default {
         rules: [
           {
             required: null,
-            message: '移诉罪民必须填写'
+            message: '移诉罪名必须填写'
           }
         ]
       },
@@ -556,6 +560,9 @@ export default {
         type: 'input',
         label: '（不）起诉意见书文号',
         span: 12,
+        value: '津和公（济）诉字〔2021〕23902 号',
+        // className:'light',
+        suffixIcon: 'iconfont icon-OCR7',
         display: true,
         prop: '1617791143584_90239',
         rules: [
@@ -571,6 +578,9 @@ export default {
         type: 'input',
         label: '移送单位',
         span: 12,
+        // className:'light',
+        suffixIcon: 'iconfont icon-OCR7',
+        value: '天津市公安局和平分局',
         display: true,
         prop: '1617791287761_49315',
         rules: [
@@ -613,6 +623,8 @@ export default {
         type: 'input',
         label: '侦（调查）察机关',
         span: 12,
+        // value: '公安机关',
+        // className:'light',
         display: true,
         prop: '1617791384380_95754',
         required: false,
@@ -653,7 +665,10 @@ export default {
       },
       {
         type: 'input',
-        label: '移速罪名',
+        label: '移送罪名',
+        value: '非法吸收公众存款罪',
+        // className:'light',
+        suffixIcon: 'iconfont icon-OCR7',
         span: 12,
         display: true,
         prop: '1617791461707_15715',
@@ -661,7 +676,7 @@ export default {
       },
       {
         type: 'input',
-        label: '移速其他罪名',
+        label: '移送其他罪名',
         span: 12,
         display: true,
         prop: '1617791479724_43996'
@@ -1014,25 +1029,25 @@ export default {
     {
       '1': '吸收',
       '2': '20000',
-      '3': '马团结',
+      '3': '张俊秀',
       '4': '2020-5-27',
     },
     {
       '1': '吸收',
       '2': '10000',
-      '3': '马团结',
+      '3': '张俊秀',
       '4': '2020-5-27',
     },
     {
       '1': '吸收',
       '2': '20000',
-      '3': '马团结',
+      '3': '张俊秀',
       '4': '2020-5-27',
     },
     {
       '1': '退回',
       '2': '30000',
-      '3': '',
+      '3': '张俊秀',
       '4': '2020-5-27',
     },
     {
@@ -1052,20 +1067,20 @@ export default {
   markOptionData: {
     "人物": {
       column: [
-        {
-          type: 'input',
-          label: '标题',
-          span: 24,
-          display: true,
-          prop: 'title',
-          required: true,
-          rules: [
-            {
-              required: true,
-              message: '标题必须填写'
-            }
-          ]
-        },
+        // {
+        //   type: 'input',
+        //   label: '标题',
+        //   span: 24,
+        //   display: true,
+        //   prop: 'title',
+        //   required: true,
+        //   rules: [
+        //     {
+        //       required: true,
+        //       message: '标题必须填写'
+        //     }
+        //   ]
+        // },
         {
           type: 'textarea',
           label: '原文',
@@ -1073,62 +1088,62 @@ export default {
           display: true,
           prop: 'book'
         },
-        {
-          type: 'select',
-          label: '类型',
-          disabled: true,
-          dicData: [
-            {
-              label: '时间',
-              value: '时间'
-            },
-            {
-              label: '地点',
-              value: '地点'
-            },
-            {
-              label: '人物',
-              value: '人物'
-            },
-            {
-              label: '案情',
-              value: '案情'
-            },
-            {
-              label: '证据',
-              value: '证据'
-            },
-            {
-              label: '涉案金额',
-              value: '涉案金额'
-            },
-            {
-              label: '问题',
-              value: '问题'
-            },
-            {
-              label: '其他',
-              value: '其他'
-            },
-          ],
-          span: 12,
-          display: true,
-          props: {
-            label: 'label',
-            value: 'value'
-          },
-          prop: 'type',
-          multiple: false,
-          clearable: true,
-          filterable: true,
-          required: false,
-          rules: [
-            {
-              required: false,
-              message: '请选择标签'
-            }
-          ],
-        },
+        // {
+        //   type: 'select',
+        //   label: '类型',
+        //   disabled: true,
+        //   dicData: [
+        //     {
+        //       label: '时间',
+        //       value: '时间'
+        //     },
+        //     {
+        //       label: '地点',
+        //       value: '地点'
+        //     },
+        //     {
+        //       label: '人物',
+        //       value: '人物'
+        //     },
+        //     {
+        //       label: '案情',
+        //       value: '案情'
+        //     },
+        //     {
+        //       label: '证据',
+        //       value: '证据'
+        //     },
+        //     {
+        //       label: '涉案金额',
+        //       value: '涉案金额'
+        //     },
+        //     {
+        //       label: '问题',
+        //       value: '问题'
+        //     },
+        //     {
+        //       label: '其他',
+        //       value: '其他'
+        //     },
+        //   ],
+        //   span: 12,
+        //   display: true,
+        //   props: {
+        //     label: 'label',
+        //     value: 'value'
+        //   },
+        //   prop: 'type',
+        //   multiple: false,
+        //   clearable: true,
+        //   filterable: true,
+        //   required: false,
+        //   rules: [
+        //     {
+        //       required: false,
+        //       message: '请选择标签'
+        //     }
+        //   ],
+        // },
         {
           type: 'select',
           label: '标签',
@@ -1163,81 +1178,81 @@ export default {
           filterable: true,
           clearable: true
         },
-        {
-          type: 'input',
-          label: '姓名',
-          span: 12,
-          display: true,
-          prop: 'name',
-          change: ({value,column}) => {
-            console.log('值改变',value,column)
-          },
-        },
-        {
-          type: 'input',
-          label: '性别',
-          span: 12,
-          display: true,
-          prop: 'sex',
-          value: '男'
-        },
-        {
-          type: 'input',
-          label: '民族',
-          span: 12,
-          display: true,
-          prop: 'minzu',
-          value: '汉族'
-        },
-        {
-          type: 'input',
-          label: '出生日期',
-          span: 12,
-          display: true,
-          prop: 'borthDate',
-          value: '1980-10-3'
-        },
-        {
-          type: 'input',
-          label: '证件号',
-          span: 12,
-          display: true,
-          prop: 'idCard',
-          value: '23321123324543'
-        },
-        {
-          type: 'input',
-          label: '住所地',
-          span: 12,
-          display: true,
-          prop: 'homeAddress',
-          value: '北京市朝阳区*路**小区**号楼**门**号'
-        },
-        {
-          type: 'input',
-          label: '户籍所在地',
-          span: 12,
-          display: true,
-          prop: 'laohomeAddress',
-          value: '陕西省西安市碑林区**巷**楼**单元**层**号'
-        },
-        {
-          type: 'input',
-          label: '受教育情况',
-          value: '大专',
-          span: 12,
-          display: true,
-          prop: 'jiaoyu'
-        },
-        {
-          type: 'array',
-          label: '关联人',
-          span: 24,
-          display: true,
-          prop: 'relevantMan',
-          placeholder: '如：张某某-父亲'
-          // value: '张某某-大哥'
-        },
+        // {
+        //   type: 'input',
+        //   label: '姓名',
+        //   span: 12,
+        //   display: true,
+        //   prop: 'name',
+        //   change: ({value,column}) => {
+        //     console.log('值改变',value,column)
+        //   },
+        // },
+        // {
+        //   type: 'input',
+        //   label: '性别',
+        //   span: 12,
+        //   display: true,
+        //   prop: 'sex',
+        //   value: '男'
+        // },
+        // {
+        //   type: 'input',
+        //   label: '民族',
+        //   span: 12,
+        //   display: true,
+        //   prop: 'minzu',
+        //   value: '汉族'
+        // },
+        // {
+        //   type: 'input',
+        //   label: '出生日期',
+        //   span: 12,
+        //   display: true,
+        //   prop: 'borthDate',
+        //   value: '1980-10-3'
+        // },
+        // {
+        //   type: 'input',
+        //   label: '证件号',
+        //   span: 12,
+        //   display: true,
+        //   prop: 'idCard',
+        //   value: '23321123324543'
+        // },
+        // {
+        //   type: 'input',
+        //   label: '住所地',
+        //   span: 12,
+        //   display: true,
+        //   prop: 'homeAddress',
+        //   value: '北京市朝阳区*路**小区**号楼**门**号'
+        // },
+        // {
+        //   type: 'input',
+        //   label: '户籍所在地',
+        //   span: 12,
+        //   display: true,
+        //   prop: 'laohomeAddress',
+        //   value: '陕西省西安市碑林区**巷**楼**单元**层**号'
+        // },
+        // {
+        //   type: 'input',
+        //   label: '受教育情况',
+        //   value: '大专',
+        //   span: 12,
+        //   display: true,
+        //   prop: 'jiaoyu'
+        // },
+        // {
+        //   type: 'array',
+        //   label: '关联人',
+        //   span: 24,
+        //   display: true,
+        //   prop: 'relevantMan',
+        //   placeholder: '如：张某某-父亲'
+        //   // value: '张某某-大哥'
+        // },
         // {
         //   type: 'select',
         //   label: '相关人员',
@@ -1278,7 +1293,7 @@ export default {
         // },
         // {
         //   type: 'select',
-        //   label: '案卡回填',
+        //   label: '智慧受案',
         //   dicData: [
         //     {
         //       label: '选项一',
@@ -1469,7 +1484,7 @@ export default {
           multiple: true,
           dicData: [
             {
-              label: '马团',
+              label: '张三',
               value: '0'
             },
             {
@@ -1477,7 +1492,7 @@ export default {
               value: '1'
             },
             {
-              label: '马团结',
+              label: '张三',
               value: '2'
             },
           ],
@@ -1493,7 +1508,7 @@ export default {
         },
         // {
         //   type: 'select',
-        //   label: '案卡回填',
+        //   label: '智慧受案',
         //   dicData: [
         //     {
         //       label: '选项一',
@@ -1710,7 +1725,7 @@ export default {
           multiple: true,
           dicData: [
             {
-              label: '马团',
+              label: '张三',
               value: '0'
             },
             {
@@ -1718,7 +1733,7 @@ export default {
               value: '1'
             },
             {
-              label: '马团结',
+              label: '张三',
               value: '2'
             },
           ],
@@ -1734,7 +1749,7 @@ export default {
         },
         // {
         //   type: 'select',
-        //   label: '案卡回填',
+        //   label: '智慧受案',
         //   dicData: [
         //     {
         //       label: '选项一',
@@ -1971,7 +1986,7 @@ export default {
         },
         // {
         //   type: 'select',
-        //   label: '案卡回填',
+        //   label: '智慧受案',
         //   dicData: [
         //     {
         //       label: '选项一',
@@ -2181,7 +2196,7 @@ export default {
           multiple: true,
           dicData: [
             {
-              label: '马团',
+              label: '张三',
               value: '0'
             },
             {
@@ -2189,7 +2204,7 @@ export default {
               value: '1'
             },
             {
-              label: '马团结',
+              label: '张三',
               value: '2'
             },
           ],
@@ -2205,7 +2220,7 @@ export default {
         },
         // {
         //   type: 'select',
-        //   label: '案卡回填',
+        //   label: '智慧受案',
         //   dicData: [
         //     {
         //       label: '选项一',
@@ -2439,7 +2454,7 @@ export default {
           multiple: true,
           dicData: [
             {
-              label: '马团',
+              label: '张三',
               value: '0'
             },
             {
@@ -2447,7 +2462,7 @@ export default {
               value: '1'
             },
             {
-              label: '马团结',
+              label: '张三',
               value: '2'
             },
           ],
@@ -2552,7 +2567,7 @@ export default {
         // },
         // {
         //   type: 'select',
-        //   label: '案卡回填',
+        //   label: '智慧受案',
         //   dicData: [
         //     {
         //       label: '选项一',
@@ -2804,7 +2819,7 @@ export default {
         },
         /*{
           type: 'select',
-          label: '案卡回填',
+          label: '智慧受案',
           dicData: [
             {
               label: '选项一',
@@ -2991,7 +3006,7 @@ export default {
           multiple: true,
           dicData: [
             {
-              label: '马团',
+              label: '张三',
               value: '0'
             },
             {
@@ -2999,7 +3014,7 @@ export default {
               value: '1'
             },
             {
-              label: '马团结',
+              label: '张三',
               value: '2'
             },
           ],
@@ -3053,7 +3068,7 @@ export default {
         // },
         // {
         //   type: 'select',
-        //   label: '案卡回填',
+        //   label: '智慧受案',
         //   dicData: [
         //     {
         //       label: '选项一',
@@ -3115,6 +3130,268 @@ export default {
           prop: 'desc'
         }
       ],
+      labelPosition: 'top',
+      labelSuffix: '：',
+      labelWidth: 120,
+      gutter: 0,
+      menuBtn: true,
+      submitBtn: false,
+      submitText: '保存',
+      emptyBtn: false,
+      emptyText: '清空',
+      menuPosition: 'right'
+    },
+    "关系": {
+      column: [
+        {
+          type: 'input',
+          label: '标题',
+          span: 24,
+          display: true,
+          prop: 'title',
+          required: true,
+          rules: [
+            {
+              required: true,
+              message: '标题必须填写'
+            }
+          ]
+        },
+        {
+          type: 'textarea',
+          label: '原文',
+          span: 24,
+          display: true,
+          prop: 'book'
+        },
+        {
+          type: 'select',
+          label: '类型',
+          disabled: true,
+          dicData: [
+            {
+              label: '时间',
+              value: '时间'
+            },
+            {
+              label: '地点',
+              value: '地点'
+            },
+            {
+              label: '人物',
+              value: '人物'
+            },
+            {
+              label: '案情',
+              value: '案情'
+            },
+            {
+              label: '证据',
+              value: '证据'
+            },
+            {
+              label: '涉案金额',
+              value: '涉案金额'
+            },
+            {
+              label: '问题',
+              value: '问题'
+            },
+            {
+              label: '其他',
+              value: '其他'
+            },
+          ],
+          span: 12,
+          display: true,
+          props: {
+            label: 'label',
+            value: 'value'
+          },
+          prop: 'type',
+          multiple: false,
+          clearable: true,
+          filterable: true,
+          required: false,
+          rules: [
+            {
+              required: false,
+              message: '请选择标签'
+            }
+          ],
+        },
+        {
+          type: 'select',
+          label: '标签',
+          dicData: [
+            {
+              label: '犯罪嫌疑人',
+              value: ' 犯罪嫌疑人'
+            },
+            {
+              label: '证人',
+              value: '证人'
+            },
+            {
+              label: '被害人',
+              value: '被害人'
+            },
+          ],
+          cascaderItem: [],
+          span: 12,
+          display: true,
+          props: {
+            label: 'label',
+            value: 'value'
+          },
+          prop: 'tag',
+          multiple: true,
+          filterable: true,
+          clearable: true
+        },
+        {
+          type: 'select',
+          label: '归属',
+          multiple: true,
+          dicData: [
+            {
+              label: '张三',
+              value: '0'
+            },
+            {
+              label: '张亚平',
+              value: '1'
+            },
+            {
+              label: '张三',
+              value: '2'
+            },
+          ],
+          cascaderItem: [],
+          span: 12,
+          display: true,
+          props: {
+            label: 'label',
+            value: 'value'
+          },
+          prop: 'test2',
+          rules: []
+        },
+        // {
+        //   type: 'select',
+        //   label: '相关人员',
+        //   dicData: [
+        //     {
+        //       label: '蒋某某',
+        //       value: '0'
+        //     },
+        //     {
+        //       label: '李四',
+        //       value: '1'
+        //     },
+        //     {
+        //       label: '王五',
+        //       value: '2'
+        //     },
+        //     {
+        //       label: '张三',
+        //       value: '3'
+        //     }
+        //   ],
+        //   cascaderItem: [],
+        //   span: 24,
+        //   display: true,
+        //   props: {
+        //     label: 'label',
+        //     value: 'value'
+        //   },
+        //   prop: 'group',
+        //   rules: []
+        // },
+        // {
+        //   type: 'input',
+        //   label: '关联关系',
+        //   span: 24,
+        //   display: true,
+        //   prop: 'task'
+        // },
+        // {
+        //   type: 'select',
+        //   label: '智慧受案',
+        //   dicData: [
+        //     {
+        //       label: '选项一',
+        //       value: '0'
+        //     },
+        //     {
+        //       label: '选项二',
+        //       value: '1'
+        //     },
+        //     {
+        //       label: '选项三',
+        //       value: '2'
+        //     }
+        //   ],
+        //   cascaderItem: [],
+        //   span: 24,
+        //   display: true,
+        //   props: {
+        //     label: 'label',
+        //     value: 'value'
+        //   },
+        //   prop: 'group',
+        //   rules: []
+        // },
+        // {
+        //   type: 'input',
+        //   // appendClick: () => {
+        //   //   console.log(e, this);
+        //   //   console.log(this.test, this.showModal());
+        //   //   debugger
+        //   //   this.test[ 'a' ]();
+        //   //   this.showModal()
+        //   // },
+        //   label: '引用',
+        //   readonly: true,
+        //   span: 24,
+        //   display: true,
+        //   prop: 'quote'
+        // },
+        // {
+        //   type: 'color',
+        //   label: '颜色',
+        //   span: 24,
+        //   display: true,
+        //   prop: 'color'
+        // },
+        // {
+        //   type: 'datetime',
+        //   label: '任务提醒',
+        //   span: 24,
+        //   display: true,
+        //   prop: 'task'
+        // },
+        {
+          type: 'textarea',
+          label: '备注',
+          span: 24,
+          display: true,
+          prop: 'desc'
+        }
+      ],
+      labelPosition: 'top',
+      labelSuffix: '：',
+      labelWidth: 120,
+      gutter: 0,
+      menuBtn: true,
+      submitBtn: false,
+      submitText: '保存',
+      emptyBtn: false,
+      emptyText: '清空',
+      menuPosition: 'right'
+    },
+    "知识检索": {
+      column: [],
       labelPosition: 'top',
       labelSuffix: '：',
       labelWidth: 120,
@@ -3416,7 +3693,7 @@ export default {
         },
         // {
         //   type: 'select',
-        //   label: '案卡回填',
+        //   label: '智慧受案',
         //   dicData: [
         //     {
         //       label: '选项一',
@@ -3575,6 +3852,32 @@ export default {
       emptyText: '清空',
       menuPosition: 'right'
     },
+    "关系": {
+      column: [],
+      labelPosition: 'top',
+      labelSuffix: '：',
+      labelWidth: 120,
+      gutter: 0,
+      menuBtn: true,
+      submitBtn: false,
+      submitText: '保存',
+      emptyBtn: false,
+      emptyText: '清空',
+      menuPosition: 'right'
+    },
+    "知识检索": {
+      column: [],
+      labelPosition: 'top',
+      labelSuffix: '：',
+      labelWidth: 120,
+      gutter: 0,
+      menuBtn: true,
+      submitBtn: false,
+      submitText: '保存',
+      emptyBtn: false,
+      emptyText: '清空',
+      menuPosition: 'right'
+    },
   },
   /*
   *         {
@@ -3665,18 +3968,13 @@ export default {
     //   title: '颜色选择',
     //   active: false,
     // },
-    // {
-    //   name: 'icon-icon-test',
-    //   title: '连线工具',
-    //   active: false,
-    // },
     {
       name: 'icon-ren1',
       title: '人物',
       active: false,
     },
     {
-      name: 'icon-shijianxuanze',
+      name: 'el-icon-date',
       title: '时间',
       active: false,
     },
@@ -3691,7 +3989,7 @@ export default {
     //   active: false,
     // },
     {
-      name: 'icon-zhengju1',
+      name: 'icon--zhengjubuchong',
       title: '证据',
       active: false,
     },
@@ -3705,16 +4003,153 @@ export default {
       title: '疑问',
       active: false,
     },
+    {
+      name: 'icon-icon-test',
+      title: '关系',
+      active: false,
+    },
+    {
+      name: 'el-icon-scissors',
+      title: '解除关系',
+      active: false,
+    },
+    {
+      name: 'el-icon-refresh',
+      title: '隐藏标注',
+      active: false,
+    },
+    {
+      name: 'el-icon-refresh-right',
+      title: '撤销',
+      active: false,
+    },
+    // {
+    //   name: 'el-icon-close',
+    //   title: '清除所有标注',
+    //   active: false,
+    // },
+    {
+      name: 'icon-search6',
+      title: '知识检索',
+      active: false,
+    },
+    {
+      name: 'icon-biaodanliebiao-14',
+      title: '标注列表',
+      active: false,
+    },
+    // {
+    //   name: 'icon-lishijilu',
+    //   title: '标注记录',
+    //   active: false,
+    // },
+  ],
+  //
+  iconList1: [
+    // {
+    //   name: 'icon-Text',
+    //   title: '其他',
+    //   active: false,
+    // },
+    // {
+    //   name: 'icon-kuangxuan',
+    //   title: '矩形选择',
+    //   active: false,
+    // },
+    // {
+    //   name: 'icon-yuanxingxuanzekuang',
+    //   title: '圆形选择',
+    //   active: false,
+    // },
+    // {
+    //   name: 'icon-yansexuanzeqi',
+    //   title: '颜色选择',
+    //   active: false,
+    // },
+    {
+      name: 'icon-ren1',
+      title: '人物',
+      active: false,
+    },
+    {
+      name: 'icon-yiping',
+      title: '时间',
+      active: false,
+    },
+    {
+      name: 'icon-didian1',
+      title: '地点',
+      active: false,
+    },
+    // {
+    //   name: 'icon-qingjiefenxi',
+    //   title: '案情',
+    //   active: false,
+    // },
+    {
+      name: 'icon--zhengjubuchong',
+      title: '证据',
+      active: false,
+    },
+    {
+      name: 'icon-jine1',
+      title: '涉案金额',
+      active: false,
+    },
+    {
+      name: 'icon-wenti',
+      title: '疑问',
+      active: false,
+    },
+  ],
+  iconList2: [
+    {
+      name: 'icon-icon-test',
+      title: '关系',
+      active: false,
+    },
+    {
+      name: 'el-icon-scissors',
+      title: '解除关系',
+      active: false,
+    },
+  ],
+  iconList3: [
+    {
+      name: 'icon-yincang2',
+      title: '隐藏标注',
+      active: false,
+    },
+    {
+      name: 'icon-chexiao',
+      title: '撤销',
+      active: false,
+    },
+    {
+      name: 'icon-qianjin',
+      title: '恢复',
+      active: false,
+    },
+    // {
+    //   name: 'el-icon-refresh-right',
+    //   title: '撤销',
+    //   active: false,
+    // },
+    // {
+    //   name: 'el-icon-close',
+    //   title: '清除所有标注',
+    //   active: false,
+    // },
     // {
     //   name: 'icon-search6',
     //   title: '知识检索',
     //   active: false,
     // },
-    // {
-    //   name: 'icon-biaodanliebiao-14',
-    //   title: '标注列表',
-    //   active: false,
-    // },
+    {
+      name: 'icon-biaodanliebiao-14',
+      title: '标注列表',
+      active: false,
+    },
     // {
     //   name: 'icon-lishijilu',
     //   title: '标注记录',
@@ -3723,85 +4158,85 @@ export default {
   ],
   // 标注列表
   markListData: [
-    // {
-    //   color: '#E6A23C',
-    //   book: '马团结，男，1980年**月**日出生，公民身份号码4123271980*******，汉族，大学文化',
-    //   name: '马团结',
-    //   createDate: '2021-5-28 10:31:23',
-    //   userName: '张检察官',
-    //   type: '人物',
-    // },
-    // {
-    //   color: '#67C23A',
-    //   book: '2015年6月10日被天津市公安局和平分局刑事拘留',
-    //   name: '',
-    //   createDate: '2021-5-28 10:31:23',
-    //   userName: '张检察官',
-    //   type: '时间',
-    // },
-    // {
-    //   color: '#67C23A',
-    //   book: '2015年2月2日报案至天津市公安局武清分局',
-    //   name: '',
-    //   createDate: '2021-5-28 10:31:23',
-    //   userName: '张检察官',
-    //   type: '时间',
-    // },
-    // {
-    //   color: '#67C23A',
-    //   book: '2015年3月2日立案进行侦查',
-    //   name: '',
-    //   createDate: '2021-5-28 10:31:23',
-    //   userName: '张检察官',
-    //   type: '时间',
-    // },
-    // {
-    //   color: '#E6A23C',
-    //   book: '孙大富于2015年2月2日报案至天津市公安局武清分局',
-    //   name: '',
-    //   createDate: '2021-5-28 10:31:23',
-    //   userName: '张检察官',
-    //   type: '人物',
-    // },
-    // {
-    //   color: '#67C23A',
-    //   book: '2015年5月10日该案经武清分局指定由我局管辖',
-    //   name: '',
-    //   createDate: '2021-5-28 10:31:23',
-    //   userName: '张检察官',
-    //   type: '时间',
-    // },
-    // {
-    //   color: '#67C23A',
-    //   book: '2016年5月10日主动到和平区和平路派出所投案',
-    //   name: '',
-    //   createDate: '2021-5-28 10:31:23',
-    //   userName: '张检察官',
-    //   type: '时间',
-    // },
-    // {
-    //   color: '#67C23A',
-    //   book: '2013年5月，犯罪嫌疑人马团结在天津注册成立夭津铁成资产管理有限公司，马团结任公司总经理',
-    //   name: '',
-    //   createDate: '2021-5-28 10:31:23',
-    //   userName: '张检察官',
-    //   type: '时间',
-    // },
-    // {
-    //   color: '#67C23A',
-    //   book: '2014年9月在天津注册天津大金资产管理有限公司',
-    //   name: '',
-    //   createDate: '2021-5-28 10:31:23',
-    //   userName: '张检察官',
-    //   type: '时间',
-    // },
+    {
+      color: '#E6A23C',
+      book: '张三，男，1980年**月**日出生，公民身份号码4123271980*******，汉族，大学文化',
+      name: '张三',
+      createDate: '2021-5-28 10:31:23',
+      userName: '张检察官',
+      type: '人物',
+    },
+    {
+      color: '#67C23A',
+      book: '2015年6月10日被天津市公安局和平分局刑事拘留',
+      name: '',
+      createDate: '2021-5-28 10:31:23',
+      userName: '张检察官',
+      type: '时间',
+    },
+    {
+      color: '#67C23A',
+      book: '2015年2月2日报案至天津市公安局和平分局',
+      name: '',
+      createDate: '2021-5-28 10:31:23',
+      userName: '张检察官',
+      type: '时间',
+    },
+    {
+      color: '#67C23A',
+      book: '2015年3月2日立案进行侦查',
+      name: '',
+      createDate: '2021-5-28 10:31:23',
+      userName: '张检察官',
+      type: '时间',
+    },
+    {
+      color: '#E6A23C',
+      book: '孙大富于2015年2月2日报案至天津市公安局和平分局',
+      name: '',
+      createDate: '2021-5-28 10:31:23',
+      userName: '张检察官',
+      type: '人物',
+    },
+    {
+      color: '#67C23A',
+      book: '2015年5月10日该案经和平分局指定由我局管辖',
+      name: '',
+      createDate: '2021-5-28 10:31:23',
+      userName: '张检察官',
+      type: '时间',
+    },
+    {
+      color: '#67C23A',
+      book: '2016年5月10日主动到和平区和平路派出所投案',
+      name: '',
+      createDate: '2021-5-28 10:31:23',
+      userName: '张检察官',
+      type: '时间',
+    },
+    {
+      color: '#67C23A',
+      book: '2013年5月，犯罪嫌疑人马团结在天津注册成立夭津铁成资产管理有限公司，马团结任公司总经理',
+      name: '',
+      createDate: '2021-5-28 10:31:23',
+      userName: '张检察官',
+      type: '时间',
+    },
+    {
+      color: '#67C23A',
+      book: '2014年9月在天津注册天津大金资产管理有限公司',
+      name: '',
+      createDate: '2021-5-28 10:31:23',
+      userName: '张检察官',
+      type: '时间',
+    },
   ],
   evidenceData: {
     '书证': [
       {
         color: '#E6A23C',
-        book: '马团，男，1980年**月**日出生，公民身份号码4123271980*******，汉族，大学文化',
-        name: '马团',
+        book: '张三，男，1980年**月**日出生，公民身份号码4123271980*******，汉族，大学文化',
+        name: '张三',
         createDate: '2021-5-28 10:31:23',
         userName: '张检察官',
         type: '涉案金额',
@@ -3811,7 +4246,7 @@ export default {
       {
         color: '#E6A23C',
         book: 'XXX银行转账记录，入账349832元',
-        name: '马团',
+        name: '张三',
         createDate: '2021-5-28 10:31:23',
         userName: '张检察官',
         type: '涉案金额',
@@ -3820,8 +4255,8 @@ export default {
     '被告人供述和辩解': [
       {
         color: '#E6A23C',
-        book: '马团，男，1980年**月**日出生，公民身份号码4123271980*******，汉族，大学文化',
-        name: '马团',
+        book: '张三，男，1980年**月**日出生，公民身份号码4123271980*******，汉族，大学文化',
+        name: '张三',
         createDate: '2021-5-28 10:31:23',
         userName: '张检察官',
         type: '人物',
@@ -3830,8 +4265,8 @@ export default {
     '被害人陈述': [
       {
         color: '#E6A23C',
-        book: '马团，男，1980年**月**日出生，公民身份号码4123271980*******，汉族，大学文化',
-        name: '马团',
+        book: '张三，男，1980年**月**日出生，公民身份号码4123271980*******，汉族，大学文化',
+        name: '张三',
         createDate: '2021-5-28 10:31:23',
         userName: '张检察官',
         type: '人物',
@@ -3840,8 +4275,8 @@ export default {
     '证人证言': [
       {
         color: '#E6A23C',
-        book: '马团，男，1980年**月**日出生，公民身份号码4123271980*******，汉族，大学文化',
-        name: '马团',
+        book: '张三，男，1980年**月**日出生，公民身份号码4123271980*******，汉族，大学文化',
+        name: '张三',
         createDate: '2021-5-28 10:31:23',
         userName: '张检察官',
         type: '人物',
@@ -3850,8 +4285,8 @@ export default {
     '鉴定意见': [
       {
         color: '#E6A23C',
-        book: '马团，男，1980年**月**日出生，公民身份号码4123271980*******，汉族，大学文化',
-        name: '马团',
+        book: '张三，男，1980年**月**日出生，公民身份号码4123271980*******，汉族，大学文化',
+        name: '张三',
         createDate: '2021-5-28 10:31:23',
         userName: '张检察官',
         type: '人物',
@@ -3861,7 +4296,7 @@ export default {
       {
         color: '#E6A23C',
         book: '公安局刑警大队讯问笔录',
-        name: '马团',
+        name: '张三',
         createDate: '2021-5-28 10:31:23',
         userName: '张检察官',
         type: '人物',
@@ -3870,8 +4305,8 @@ export default {
     '其他': [
       {
         color: '#E6A23C',
-        book: '马团，男，1980年**月**日出生，公民身份号码4123271980*******，汉族，大学文化',
-        name: '马团',
+        book: '张三，男，1980年**月**日出生，公民身份号码4123271980*******，汉族，大学文化',
+        name: '张三',
         createDate: '2021-5-28 10:31:23',
         userName: '张检察官',
         type: '人物',
@@ -4232,24 +4667,24 @@ export default {
     nodes: [
       {
         id: 'N13',
-        text: '马团',
+        text: '张三丰',
         'color': 'rgba(0, 206, 209, 1)',
         'borderColor': '#6cc0ff',
-        html: '<div class="c-my-node" style="border:#6cc0ff solid 3px;"><div class="c-node-name" style="color:#6cc0ff">马团</div></div>'
+        html: '<div class="c-my-node" style="border:#6cc0ff solid 3px;"><div class="c-node-name" style="color:#6cc0ff">张三丰</div></div>'
       },
       {
         id: 'N14',
-        text: '张亚平',
+        text: '张三',
         'color': 'rgba(0, 206, 209, 1)',
         'borderColor': '#6cc0ff',
-        html: '<div class="c-my-node" style="border:#6cc0ff solid 3px;"><div class="c-node-name" style="color:#6cc0ff">张亚平</div></div>'
+        html: '<div class="c-my-node" style="border:#6cc0ff solid 3px;"><div class="c-node-name" style="color:#6cc0ff">张三</div></div>'
       },
       {
         id: 'N17',
-        text: '马团结',
+        text: '张俊秀',
         'color': 'rgba(0, 206, 209, 1)',
         'borderColor': '#6cc0ff',
-        html: '<div class="c-my-node" style="border:#6cc0ff solid 3px;"><div class="c-node-name" style="color:#6cc0ff">马团结</div></div>'
+        html: '<div class="c-my-node" style="border:#6cc0ff solid 3px;"><div class="c-node-name" style="color:#6cc0ff">张俊秀</div></div>'
       },
     ],
     links: [
@@ -4267,98 +4702,104 @@ export default {
   },
   activities1: [
     {
-      content: '在天津注册成立夭津铁成资产管理有限公司【马团】',
-      timestamp: '2013年5月',
-      color: '#0bbd87',
+      content: '举报至我局【张俊秀】',
+      timestamp: '2016年11月21日',
       icon: 'el-icon-arrow-down',
+      color: '#0bbd87'
     },
     {
-      content: '报案至天津市公安局武清分局【马团】',
-      timestamp: '2015年2月2日',
-      color: '#0bbd87',
+      content: '立案侦查',
+      timestamp: '2016年11月22日',
       icon: 'el-icon-arrow-down',
+      color: '#0bbd87'
     },
     {
-      content: '立案进行侦查【马团】',
-      timestamp: '2015年3月2日',
-      color: '#0bbd87',
+      content: '因涉嫌非法吸收公众存款罪被刑事拘留【张三】',
+      timestamp: '2017年5月23日',
       icon: 'el-icon-arrow-down',
+      color: '#0bbd87'
     },
     {
-      content: '该案经武清分局指定由我局管辖【马团】',
-      timestamp: '2015年5月10日',
-      color: '#0bbd87',
+      content: '被取保候审【张三】',
+      timestamp: '同年6月15日',
       icon: 'el-icon-arrow-down',
+      color: '#0bbd87'
     },
     {
-      content: '天津市公安局和平分局刑事拘留【马团】',
-      timestamp: '2015年6月10日',
-      color: '#0bbd87',
+      content: '被天津市和平区人民检察院取保候审【张三】',
+      timestamp: '2017年10月24日',
       icon: 'el-icon-arrow-down',
+      color: '#0bbd87'
     },
     {
-      content: '经天津市和平区人民检察院批准逮捕【马团】',
-      timestamp: '同年7月10日',
-      color: '#0bbd87',
+      content: '被天津市和平区人民检察院监视居住【张三】',
+      timestamp: '2018年10月24日',
       icon: 'el-icon-arrow-down',
+      color: '#0bbd87'
     },
-    // {
-    //   content: '主动到和平区和平路派出所投案【马团】',
-    //   timestamp: '2016年5月10日',
-    //   color: '#0bbd87'
-    // },
     {
-      content: '被我局延长拘留期限至2017年2月30日【马团】',
-      timestamp: '同年12月22日',
-      color: '#0bbd87',
+      content: '经天津市和平区人民检察院批准逮捕【张三】',
+      timestamp: '2019年4月23日解除监视居住',
       icon: 'el-icon-arrow-down',
+      color: '#0bbd87'
+    },
+    {
+      content: '因涉嫌非法吸收公众存款罪被我局刑事拘留【张三】',
+      timestamp: '2020年12月12日',
+      color: '#0bbd87'
+    },
+    {
+      content: '被逮捕【张三】',
+      timestamp: '2021年1月22日',
+      icon: 'el-icon-arrow-down',
+      color: '#0bbd87'
     },
   ],
   activitiesMan: [
+    // {
+    //   content: '出生',
+    //   timestamp: '1981年9月12日',
+    //   icon: 'el-icon-arrow-down',
+    //   color: '#0bbd87'
+    // },
     {
-      content: '在天津注册成立夭津铁成资产管理有限公司',
-      timestamp: '2013年5月',
+      content: '因涉嫌非法吸收公众存款罪被刑事拘留',
+      timestamp: '2017年5月23日',
       icon: 'el-icon-arrow-down',
       color: '#0bbd87'
     },
     {
-      content: '报案至天津市公安局武清分局',
-      timestamp: '2015年2月2日',
+      content: '被取保候审',
+      timestamp: '同年6月15日',
       icon: 'el-icon-arrow-down',
       color: '#0bbd87'
     },
     {
-      content: '立案进行侦查',
-      timestamp: '2015年3月2日',
+      content: '被天津市和平区人民检察院取保候审',
+      timestamp: '2017年10月24日',
       icon: 'el-icon-arrow-down',
       color: '#0bbd87'
     },
     {
-      content: '该案经武清分局指定由我局管辖',
-      timestamp: '2015年5月10日',
-      icon: 'el-icon-arrow-down',
-      color: '#0bbd87'
-    },
-    {
-      content: '天津市公安局和平分局刑事拘留',
-      timestamp: '2015年6月10日',
+      content: '被天津市和平区人民检察院监视居住',
+      timestamp: '2018年10月24日',
       icon: 'el-icon-arrow-down',
       color: '#0bbd87'
     },
     {
       content: '经天津市和平区人民检察院批准逮捕',
-      timestamp: '同年7月10日',
+      timestamp: '2019年4月23日解除监视居住',
       icon: 'el-icon-arrow-down',
       color: '#0bbd87'
     },
-    // {
-    //   content: '主动到和平区和平路派出所投案',
-    //   timestamp: '2016年5月10日',
-    //   color: '#0bbd87'
-    // },
     {
-      content: '被我局延长拘留期限至2016年2月30日',
-      timestamp: '同年12月22日',
+      content: '因涉嫌非法吸收公众存款罪被我局刑事拘留',
+      timestamp: '2020年12月12日',
+      color: '#0bbd87'
+    },
+    {
+      content: '被逮捕',
+      timestamp: '2021年1月22日',
       icon: 'el-icon-arrow-down',
       color: '#0bbd87'
     },
@@ -4380,4 +4821,43 @@ export default {
       color: '#0bbd87'
     },
   ],
+  activities3: [
+    {
+      content: '【张检察官】修改了起诉意见书第2行',
+      timestamp: '2018-04-12 20:46',
+      color: '#0bbd87'
+    },
+    {
+      content: '【张检察官】删除了起诉意见书第30行',
+      timestamp: '2018-04-03 20:46(检察官2)',
+      color: '#0bbd87'
+    },
+    {
+      content: '【张检察官】修改了起诉意见书第9行',
+      timestamp: '2018-04-03 20:46(检察官2)',
+      color: '#0bbd87'
+    },
+  ],
+  colors: [
+    {
+      color: '#409EFF',
+      title: '蓝色',
+    },
+    {
+      color: '#67C23A',
+      title: '绿色',
+    },
+    {
+      color: '#E6A23C',
+      title: '黄色',
+    },
+    {
+      color: '#F56C6C',
+      title: '红色',
+    },
+    {
+      color: '#909399',
+      title: '灰色',
+    },
+  ]
 }
